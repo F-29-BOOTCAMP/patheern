@@ -95,6 +95,8 @@ Sprint Board Screenshotları:
 
 Ürün durumu Screenshot:
 
+![login Page](https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/719dbe90-ffc6-4361-9c6b-2f8ce4e8dc22)
+
 
 Sprint Review: Takım arkadaşlarımızın katılımı ile yeni kararlar alınmıştır. Birinci olarak UI, UX düzenleme taslağının başka bir yerden tekrar oluşturulacağı kararına varılmıştır. İkinci olarak özel gereksinimli bireyler için ek bir tasarım yapmak hedeflenmiştir. Genel olarak ise UI kısmında giriş sayfaları, profiller gibi anahatlar çizilmiş, kodlama kısmındaysa temeller atılmıştır. Eksiklerimizi değerlendirerek yeni bir planlama ve görüşme sistemi kurulmuştur.
 

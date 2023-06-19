@@ -85,7 +85,7 @@ Sprint 1
 Sprint içinde tamamlanması tahmin edilen puan: 100
 Puan tamamlama mantığı: Toplamda 400 puanlık bir backlogumuz bulunmaktadır. İlk sprintin en az 100 puan olması gerektiğine karar verildi.
 Daily Scrum: Daily Scrumlar ayın 16'sına kadar süren sınav tarihlerinden Whatsapp üzerinden yapılması uygun bulundu. Toplantı örnekleri 
-ve gerekli ekleri bu bağlantıdan görebilirsiniz. https://drive.google.com/file/d/1GJO0dzi9cmZ6XK7yKeiN-iWF-MxpomwN/view?usp=sharing
+ve gerekli ekleri bu bağlantıdan görebilirsiniz. https://drive.google.com/drive/folders/13uqxfUZ-nsSX8urOvU9Rin5ZH1Px3SdL
 
 Sprnt Board Update:
 Sprint Board Screenshotları:

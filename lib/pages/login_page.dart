@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 25),
 
               Container(
                 width: 150,
@@ -33,7 +33,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 25),
 
               Text(
                 'PATHEERN',

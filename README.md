@@ -85,8 +85,17 @@ Sprint 1
 Sprint içinde tamamlanması tahmin edilen puan: 100
 Puan tamamlama mantığı: Toplamda 400 puanlık bir backlogumuz bulunmaktadır. İlk sprintin en az 100 puan olması gerektiğine karar verildi.
 İlk sprintte elde edilmesi gereken puana ulaşamamış ve 90 puanda kalınmıştır. Puanlama sistemimiz ise Daily Scrumlarda belirlediğimiz görev dağılımlarının aktif şekilde yapılıyor olması temelinde oluşturulmuştur. Her kişiye 20 puanlık bir giriş puanlaması hazırlandı Daily Scrumda to do kısmında yaşanan gecikmeler, UI kısmında yaşanan aksaklıklar ve ekip üyelerinin katılım eksikliğinden (geçerli mazeretlerinden dolayı) kaynaklanan durumlar nedeniyle kişi başına 2-5 paun arasında düşüşler yaşandı. Böylece 1. Sprintin sonunda tarihle ilgili yaşanan sorunlar ve aktiflik sorunları yaşandığı için 90 puana ulaşıldı. 
+
+
+
 Sprint Notları: Takımımız Proje yönetiminde Trello ve Miro’ yüksek eş zamanlı kullanma kararı almıştır. Backlog itemlerinin ayrıntıları Miroda tutulmuştur. To do, done, görev kısımları gibi storyler trello’dan izlenmiştir. 
+
+
+
 Backlog Düzeni: Backlog düzenimiz başlangıç sprintinde yapılacak olan işler etrafında düzenlenmiştir. Task Storyleri başına verilen puan görev dağılımlarına kıyasla daha düşük tutulmuştur.
+
+
+
 Daily Scrum: Daily Scrumlar ayın 16'sına kadar süren sınav tarihlerinden Whatsapp üzerinden yapılması uygun bulundu. Toplantı örnekleri 
 ve gerekli ekleri bu bağlantıdan görebilirsiniz. https://drive.google.com/drive/folders/13uqxfUZ-nsSX8urOvU9Rin5ZH1Px3SdL
 

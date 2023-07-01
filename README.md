@@ -84,17 +84,30 @@ Sprint 1
 
 Sprint içinde tamamlanması tahmin edilen puan: 100
 Puan tamamlama mantığı: Toplamda 400 puanlık bir backlogumuz bulunmaktadır. İlk sprintin en az 100 puan olması gerektiğine karar verildi.
+İlk sprintte elde edilmesi gereken puana ulaşamamış ve 90 puanda kalınmıştır. Puanlama sistemimiz ise Daily Scrumlarda belirlediğimiz görev dağılımlarının aktif şekilde yapılıyor olması temelinde oluşturulmuştur. Her kişiye 20 puanlık bir giriş puanlaması hazırlandı Daily Scrumda to do kısmında yaşanan gecikmeler, UI kısmında yaşanan aksaklıklar ve ekip üyelerinin katılım eksikliğinden (geçerli mazeretlerinden dolayı) kaynaklanan durumlar nedeniyle kişi başına 2-5 paun arasında düşüşler yaşandı. Böylece 1. Sprintin sonunda tarihle ilgili yaşanan sorunlar ve aktiflik sorunları yaşandığı için 90 puana ulaşıldı. 
+
+
+
+Sprint Notları: Takımımız Proje yönetiminde Trello ve Miro’ yüksek eş zamanlı kullanma kararı almıştır. Backlog itemlerinin ayrıntıları Miroda tutulmuştur. To do, done, görev kısımları gibi storyler trello’dan izlenmiştir. 
+
+
+
+Backlog Düzeni: Backlog düzenimiz başlangıç sprintinde yapılacak olan işler etrafında düzenlenmiştir. Task Storyleri başına verilen puan görev dağılımlarına kıyasla daha düşük tutulmuştur.
+
+
+
 Daily Scrum: Daily Scrumlar ayın 16'sına kadar süren sınav tarihlerinden Whatsapp üzerinden yapılması uygun bulundu. Toplantı örnekleri 
 ve gerekli ekleri bu bağlantıdan görebilirsiniz. https://drive.google.com/drive/folders/13uqxfUZ-nsSX8urOvU9Rin5ZH1Px3SdL
 
 Sprnt Board Update:
 Sprint Board Screenshotları:
 
-
-
+![sprint board](https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/f93eb3e8-2941-46c3-aed2-8e747798eec0)
 
 Ürün durumu Screenshot:
 
+![login Page](https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/719dbe90-ffc6-4361-9c6b-2f8ce4e8dc22)
+![Filtering](https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/99b83fbd-6aed-4496-9b1b-3a54b2f0136d)
 
 Sprint Review: Takım arkadaşlarımızın katılımı ile yeni kararlar alınmıştır. Birinci olarak UI, UX düzenleme taslağının başka bir yerden tekrar oluşturulacağı kararına varılmıştır. İkinci olarak özel gereksinimli bireyler için ek bir tasarım yapmak hedeflenmiştir. Genel olarak ise UI kısmında giriş sayfaları, profiller gibi anahatlar çizilmiş, kodlama kısmındaysa temeller atılmıştır. Eksiklerimizi değerlendirerek yeni bir planlama ve görüşme sistemi kurulmuştur.
 

@@ -113,6 +113,13 @@ https://trello.com/invite/b/QjG35vLH/ATTI03703509e7bcf55b435a46e2c1b4ec8380F513E
 
 
 Sprint 2
+
+
+
+
+
+
+
 Sprint Notları: Sprint planlama toplantısında karar verdiğimiz üzere bu sprintte 1.sprintte özel durumlara sahip olan takım arkadaşlarımızın desteklenerek projeye kazandırılması, UI(figmaya geçildi) ve dolasıyla kodlama kısımlarının düzenlenmesine odaklanılmıştır. Tekrar bir görev dağılımı yapılarak kod kısımları düzenlemeye alınmıştır. Takım arkadaşlarımızın eksiklerinden dolayı 2. Sprint içinde tüm verilen kodların bitmesi beklenmemiş 3.sprintin ilk 3 gününe kadar zaman tanınmıştır. Bu süreçte 1.sprintte özellikle final haftalarından ve özel sorunlardan dolayı her gün gerçekleştiremediğimiz Daily Scrum her gün 23:00 da gerçekleştirilmek üzere karar alınmıştır. Storyler Trello ile devam ettiğimiz proje yönetimi kısmında, Product Backloglara yazılmış olup, açıklama kısmında okunabilir durumdalar.
 Sprint içinde tamamlanması tahmin edilen puan:150 puan
 

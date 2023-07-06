@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "87139102734",
+    "project_id": "patheernboot",
+    "storage_bucket": "patheernboot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87139102734:android:4f540188afb73e60b08c5f",
+        "android_client_info": {
+          "package_name": "com.example.patheern"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87139102734-tklpinflr90cdbe9erosoqlvhkuffne4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAutn8unMzJeqYsvVTh0RgWvnrlyQ8q3SE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87139102734-tklpinflr90cdbe9erosoqlvhkuffne4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

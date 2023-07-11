@@ -44,6 +44,8 @@ class ProfilePage extends StatefulWidget {
   _ProfilePageState createState() => _ProfilePageState();
 }
 
+
+
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController aboutController = TextEditingController();
   FocusNode aboutFocusNode = FocusNode();
@@ -71,6 +73,7 @@ class _ProfilePageState extends State<ProfilePage> {
   TextEditingController addressController = TextEditingController();
 
   List<Experience> experiences = []     ;
+  List<Edu> edu = [];
 
   @override
   void dispose() {
@@ -107,14 +110,14 @@ class _ProfilePageState extends State<ProfilePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'İsim Soyisim',
+                        'Vunay',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        'Meslek Başlığı',
+                        'Yazılım Müh.',
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.grey,
@@ -148,16 +151,55 @@ class _ProfilePageState extends State<ProfilePage> {
                   controller: aboutController,
                   focusNode: aboutFocusNode,
                   decoration: InputDecoration(
-                    hintText: 'Hakkımda',
+                    hintText: '.....',
                     border: OutlineInputBorder(),
                   ),
                   maxLines: null,
                   onSaved: (value) {
-                    // Hakkımda metnini kaydetmek için yapılacak işlemler
                   },
                 ),
               ),
-              SizedBox(height: 16),
+
+              SizedBox(height: 16,),
+              Text("Eğitim",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold
+              ),
+              ),
+              SizedBox(height: 8),
+
+
+              ElevatedButton(
+                onPressed: () {
+                  showEdu();
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ), backgroundColor: Color(0xFFFD5D2D),
+                ),
+                child: Text('Eğitim Ekle'),
+              ),
+
+
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: edu.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    leading: Icon(Icons.school),
+                    title: Text(edu[index].course),
+                    subtitle: Text(
+                      '${edu[index].Uni}, ${experiences[index].date}',
+                    ),
+                  );
+                 },
+              ),
+
+
+
+
               Text(
                 'Yetenekler',
                 style: TextStyle(
@@ -190,7 +232,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                   ), backgroundColor: Color(0xFFFD5D2D),
+
                 ),
+
                 child: Text('Yetenek Seç'),
               ),
               SizedBox(height: 16),
@@ -338,6 +382,7 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
 
+
   void showLanguagesDialog() {
     showDialog(
       context: context,
@@ -385,6 +430,7 @@ class _ProfilePageState extends State<ProfilePage> {
       },
     );
   }
+
 
   void showContactDialog() {
     showDialog(
@@ -450,6 +496,85 @@ class _ProfilePageState extends State<ProfilePage> {
       },
     );
   }
+
+  void showEdu(){
+    showDialog(
+        context: context,
+        builder: (context){
+          String school = " ";
+          String course = " ";
+           String Uni = " ";
+           String Year = " ";
+
+
+           return Dialog(
+             shape: RoundedRectangleBorder(
+               borderRadius: BorderRadius.circular(16),
+             ),
+             child: Padding(
+               padding: EdgeInsets.all(16),
+               child: Column(
+                 mainAxisSize: MainAxisSize.min,
+                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                 children: [
+                   Text(
+                     "Eğitim Ekle",
+                     style: TextStyle(
+                       fontSize: 18,
+                       fontWeight: FontWeight.bold,
+                     ),
+                   ),
+                   SizedBox(height: 16),
+                   TextFormField(
+                     decoration: InputDecoration(
+                       labelText: "Okul",
+                       border: OutlineInputBorder(),
+                     ),
+                     onChanged: (value){
+                       school = value;
+                     },
+                   ),
+                   SizedBox(height: 8),
+                   TextFormField(
+                     decoration: InputDecoration(
+                       labelText: "Bölüm",
+                       border: OutlineInputBorder(),
+                     ),
+                     onChanged: (value){
+                       course = value;
+                    },
+                   ),
+                   SizedBox(height: 8),
+                   TextFormField(
+                     decoration: InputDecoration(
+                       labelText: "GPA",
+                       border: OutlineInputBorder(),
+                     ),
+                     onChanged: (value){
+                       Uni = value;
+                     },
+                   ),
+                   SizedBox(height: 16),
+                 ElevatedButton(
+                   onPressed: () {
+                     setState(() {
+                       edu.add(edu as Edu);
+                     });
+                     Navigator.pop(context);
+                   },
+                   style: ElevatedButton.styleFrom(
+                     shape: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.circular(30.0),
+                     ), backgroundColor: Color(0xFFFD5D2D),
+                   ),
+                   child: Text('Kaydet'),
+                 )],    )
+             )
+           );
+    },
+    );
+        }
+
 
 
 
@@ -535,6 +660,25 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
+
+  void showExperienceDialog() {}
+
+
+class Edu {
+  final String school;
+  final String course;
+  final String Uni;
+  final int Year;
+
+  Edu({
+    required this.school,
+    required this.course,
+    required this.Uni,
+    required this.Year,
+});
+
+}
+
 
 
 

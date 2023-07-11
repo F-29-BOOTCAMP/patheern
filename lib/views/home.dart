@@ -7,7 +7,7 @@ import 'package:patheern/widgets/company_card.dart';
 import 'package:patheern/widgets/company_card2.dart';
 import 'package:patheern/page/profile_page.dart';
 import 'package:patheern/page/filter_page.dart';
-
+import 'package:patheern/page/profile.dart'; 
 import '../page/job_detail.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ProfilePage(), // Profil sayfasına yönlendirme
+                      ProfilePages(), // Profil sayfasına yönlendirme
                 ),
               );
             },

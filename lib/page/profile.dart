@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: createMaterialColor(Colors.white),
       ),
-      home: ProfilePage(),
+      home: ProfilePages(),
     );
   }
 
@@ -39,14 +39,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ProfilePage extends StatefulWidget {
+class ProfilePages extends StatefulWidget {
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _ProfilePagesState createState() => _ProfilePagesState();
 }
 
 
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilePagesState extends State<ProfilePages> {
   TextEditingController aboutController = TextEditingController();
   FocusNode aboutFocusNode = FocusNode();
 
@@ -103,7 +103,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 children: [
                   CircleAvatar(
                     radius: 40,
-                    backgroundImage: AssetImage('assets/profile_image.png'),
+                    backgroundImage: AssetImage('assets/patheern.png'),
                   ),
                   SizedBox(width: 16),
                   Column(
@@ -146,12 +146,13 @@ class _ProfilePageState extends State<ProfilePage> {
               GestureDetector(
                 onTap: () {
                   FocusScope.of(context).requestFocus(aboutFocusNode);
+                  
                 },
                 child: TextFormField(
                   controller: aboutController,
                   focusNode: aboutFocusNode,
                   decoration: InputDecoration(
-                    hintText: '.....',
+                    hintText: 'Merhaba, ben Vunay. Şu anda Yazılım\nMühendisliği okuyorum. Programlamaya olan ilgim ve teknolojiye duyduğum tutku beni bu alana yönlendirdi. Yazılım geliştirme süreçleri, algoritma analizi ve veritabanı yönetimi gibi konular üzerinde çalışarak kendimi geliştirmeye devam ediyorum. ',
                     border: OutlineInputBorder(),
                   ),
                   maxLines: null,

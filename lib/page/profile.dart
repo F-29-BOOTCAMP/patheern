@@ -90,7 +90,7 @@ class _ProfilePagesState extends State<ProfilePages> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profil Sayfası'),
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFF0A426F),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -152,7 +152,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                   controller: aboutController,
                   focusNode: aboutFocusNode,
                   decoration: InputDecoration(
-                    hintText: 'Merhaba, ben Vunay. Şu anda Yazılım\nMühendisliği okuyorum. Programlamaya olan ilgim ve teknolojiye duyduğum tutku beni bu alana yönlendirdi. Yazılım geliştirme süreçleri, algoritma analizi ve veritabanı yönetimi gibi konular üzerinde çalışarak kendimi geliştirmeye devam ediyorum. ',
+                    hintText: 'Merhaba, ben Vunay. Şu anda Yazılım\nMühendisliği okuyorum. Programlamaya olan\nilgim ve teknolojiye duyduğum tutku beni bu\nalana yönlendirdi. Yazılım geliştirme süreçleri,\nalgoritma analizi ve veritabanı yönetimi gibi\nkonular üzerinde çalışarak kendimi geliştirmeye\ndevam ediyorum. ',
                     border: OutlineInputBorder(),
                   ),
                   maxLines: null,
@@ -178,7 +178,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  ), backgroundColor: Color(0xFFFD5D2D),
+                  ), backgroundColor: Color(0xFFFA5805),
                 ),
                 child: Text('Eğitim Ekle'),
               ),
@@ -232,7 +232,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  ), backgroundColor: Color(0xFFFD5D2D),
+                  ), backgroundColor: Color(0xFFFA5805),
 
                 ),
 
@@ -270,7 +270,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  ), backgroundColor: Color(0xFFFD5D2D),
+                  ), backgroundColor: Color(0xFFFA5805),
                 ),
                 child: Text('Dil Ekle'),
               ),
@@ -303,7 +303,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  ), backgroundColor: Color(0xFFFD5D2D),
+                  ), backgroundColor: Color(0xFFFA5805),
                 ),
                 child: Text('Deneyim Ekle'),
               ),
@@ -486,7 +486,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
-                    ), backgroundColor: Color(0xFFFD5D2D),
+                    ), backgroundColor: Color(0xFFFA5805),
                   ),
                   child: Text('Kaydet'),
                 ),
@@ -566,7 +566,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                    style: ElevatedButton.styleFrom(
                      shape: RoundedRectangleBorder(
                        borderRadius: BorderRadius.circular(30.0),
-                     ), backgroundColor: Color(0xFFFD5D2D),
+                     ), backgroundColor: Color(0xFFFA5805),
                    ),
                    child: Text('Kaydet'),
                  )],    )
@@ -649,7 +649,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
-                    ), backgroundColor: Color(0xFFFD5D2D),
+                    ), backgroundColor: Color(0xFFFA5805),
                   ),
                   child: Text('Kaydet'),
                 ),

@@ -7,8 +7,13 @@ import 'package:patheern/widgets/company_card.dart';
 import 'package:patheern/widgets/company_card2.dart';
 import 'package:patheern/page/profile_page.dart';
 import 'package:patheern/page/filter_page.dart';
-import 'package:patheern/page/profile.dart'; 
+import 'package:patheern/page/profile.dart';
 import '../page/job_detail.dart';
+import 'package:patheern/page/save_page.dart';
+import 'package:patheern/page/menu_page/ayarlar_page.dart';
+import 'package:patheern/page/menu_page/basvuru.dart';
+import 'package:patheern/page/menu_page/bildirim_page.dart';
+import 'package:patheern/page/menu_page/favoriler_page.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -19,17 +24,53 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  setState(() {
+    _selectedIndex = index;
+    switch (index) {
+      case 0: // Ana Sayfa öğesi
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(), // Ana Sayfa'ya yönlendirme
+          ),
+        );
+        break;
+      case 1: // Kaydedilenler öğesi
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SavedPage(), // Kaydedilenler sayfasına yönlendirme
+          ),
+        );
+        break;
+      case 2: // Ara öğesi
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(), // Ara sayfasına yönlendirme
+          ),
+        );
+        break;
+      case 3: // Profil öğesi
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProfilePages(), // Profil sayfasına yönlendirme
+          ),
+        );
+        break;
+      default:
+        break;
+    }
+  });
+}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kSilver,
       appBar: AppBar(
-        backgroundColor: kSilver,
+        backgroundColor: Color(0xFFFA5805),
         elevation: 0.0,
         leading: Builder(
           builder: (BuildContext context) {
@@ -59,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ProfilePages(), // Profil sayfasına yönlendirme
+                      ProfilePage(), // Profil sayfasına yönlendirme
                 ),
               );
             },
@@ -96,9 +137,9 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () => null,
             ),
             ListTile(
-              leading: Icon(Icons.share),
-              title: Text('Paylaş'),
-              onTap: () => null,
+              leading: Icon(Icons.paste_rounded),
+              title: Text('Başvurular'),
+              onTap: () => Screen1, //bu kısma bağladım ama çalışmadı   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ),
             ListTile(
               leading: Icon(Icons.notifications),
@@ -109,7 +150,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Ayarlar'),
-              onTap: () => null,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AyarlarPage()),
+                );
+              },
             ),
             Divider(),
             ListTile(
@@ -142,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 15.0),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Color.fromARGB(189, 158, 158, 158),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: TextField(

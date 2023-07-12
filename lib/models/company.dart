@@ -28,7 +28,7 @@ List<Company> companyList = [
     companyName: "Nike",
     job: "Senior UI Designer",
     city: "İstanbul, Taksim",
-    sallary: "9K - Monthly",
+    sallary: "4K - Aylık",
     image: "assets/nike-Logo.png",
     tag: [
       "Tam Zamanlı",
@@ -37,12 +37,12 @@ List<Company> companyList = [
     ],
     mainCriteria: "Tam Zamanlı",
     jobOpportunity:
-        "jnjnjnjnjnjjnjnjnjnjnjn",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     jobResponsbilities: [
-      "jnjnjnjnjnjnjnjnjnjnjnjnjn",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     ],
     aboutCompany:
-        "njnjnjnjnjnjnjnjnjnjnjnj",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   ),
   Company(
     companyName: "Uber",

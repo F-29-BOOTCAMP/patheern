@@ -10,10 +10,11 @@ import 'package:patheern/page/filter_page.dart';
 import 'package:patheern/page/profile.dart';
 import '../page/job_detail.dart';
 import 'package:patheern/page/save_page.dart';
+import 'package:patheern/page/search_page.dart';
 import 'package:patheern/page/menu_page/ayarlar_page.dart';
 import 'package:patheern/page/menu_page/basvuru.dart';
 import 'package:patheern/page/menu_page/bildirim_page.dart';
-import 'package:patheern/page/menu_page/favoriler_page.dart';
+import 'package:patheern/page/menu_page/favorites_page.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -24,51 +25,53 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
-  setState(() {
-    _selectedIndex = index;
-    switch (index) {
-      case 0: // Ana Sayfa öğesi
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MyHomePage(), // Ana Sayfa'ya yönlendirme
-          ),
-        );
-        break;
-      case 1: // Kaydedilenler öğesi
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => SavedPage(), // Kaydedilenler sayfasına yönlendirme
-          ),
-        );
-        break;
-      case 2: // Ara öğesi
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MyHomePage(), // Ara sayfasına yönlendirme
-          ),
-        );
-        break;
-      case 3: // Profil öğesi
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ProfilePages(), // Profil sayfasına yönlendirme
-          ),
-        );
-        break;
-      default:
-        break;
-    }
-  });
-}
+    setState(() {
+      _selectedIndex = index;
+      switch (index) {
+        case 0: // Ana Sayfa öğesi
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MyHomePage(), // Ana Sayfa'ya yönlendirme
+            ),
+          );
+          break;
+        case 1: // Kaydedilenler öğesi
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  SavedPage(), // Kaydedilenler sayfasına yönlendirme
+            ),
+          );
+          break;
+        case 2: // Ara öğesi
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SearchPage(), // Ara sayfasına yönlendirme
+            ),
+          );
+          break;
+        case 3: // Profil öğesi
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  ProfilePages(), // Profil sayfasına yönlendirme
+            ),
+          );
+          break;
+        default:
+          break;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kSilver,
+      backgroundColor: Color.fromARGB(255, 207, 215, 220),
       appBar: AppBar(
         backgroundColor: Color(0xFFFA5805),
         elevation: 0.0,
@@ -134,17 +137,32 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               leading: Icon(Icons.favorite),
               title: Text('Favoriler'),
-              onTap: () => null,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FavoritesPages()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.paste_rounded),
               title: Text('Başvurular'),
-              onTap: () => Screen1, //bu kısma bağladım ama çalışmadı   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Screen1()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.notifications),
               title: Text('Bildirimler'),
-              onTap: () => null,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BildirimSayfasi()),
+                );
+              },
             ),
             Divider(),
             ListTile(
@@ -161,7 +179,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: Text('Çıkış'),
               leading: Icon(Icons.exit_to_app),
-              onTap: () => null,
+              onTap: () =>
+                  null, ////////////////////// eklenecek ve kayıt ol sayfasına yönlendirecek
             ),
           ],
         ),
@@ -188,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 15.0),
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(189, 158, 158, 158),
+                          color: Color(0xBC9E9E9E),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: TextField(
@@ -202,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             border: InputBorder.none,
                             hintText: "Fırsat Ara",
                             hintStyle: kSubtitleStyle.copyWith(
-                              color: Colors.black38,
+                              color: const Color.fromARGB(97, 0, 0, 0),
                             ),
                           ),
                         ),
@@ -299,8 +318,18 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       title: Text(recent!.job!, style: kTitleStyle),
-                      subtitle: Text(
-                          "${recent.companyName} • ${recent.mainCriteria}"),
+                      subtitle: Row(
+                        children: [
+                          Text(
+                              "${recent.companyName} • ${recent.mainCriteria}"),
+                          IconButton(
+                            icon: Icon(Icons.bookmark),
+                            onPressed: () {
+                              // When the icon is clicked, the code here runs
+                            },
+                          ),
+                        ],
+                      ),
                       trailing: Icon(
                         Icons.more_vert,
                         color: kBlack,

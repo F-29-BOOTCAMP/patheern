@@ -44,8 +44,6 @@ class ProfilePages extends StatefulWidget {
   _ProfilePagesState createState() => _ProfilePagesState();
 }
 
-
-
 class _ProfilePagesState extends State<ProfilePages> {
   TextEditingController aboutController = TextEditingController();
   FocusNode aboutFocusNode = FocusNode();
@@ -72,7 +70,7 @@ class _ProfilePagesState extends State<ProfilePages> {
   TextEditingController phoneController = TextEditingController();
   TextEditingController addressController = TextEditingController();
 
-  List<Experience> experiences = []     ;
+  List<Experience> experiences = [];
   List<Edu> edu = [];
 
   @override
@@ -142,35 +140,31 @@ class _ProfilePagesState extends State<ProfilePages> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 16),
               GestureDetector(
                 onTap: () {
                   FocusScope.of(context).requestFocus(aboutFocusNode);
-                  
                 },
                 child: TextFormField(
                   controller: aboutController,
                   focusNode: aboutFocusNode,
                   decoration: InputDecoration(
-                    hintText: 'Merhaba, ben Vunay. Şu anda Yazılım\nMühendisliği okuyorum. Programlamaya olan\nilgim ve teknolojiye duyduğum tutku beni bu\nalana yönlendirdi. Yazılım geliştirme süreçleri,\nalgoritma analizi ve veritabanı yönetimi gibi\nkonular üzerinde çalışarak kendimi geliştirmeye\ndevam ediyorum. ',
+                    hintText:
+                        'Merhaba, ben Vunay. Şu anda Yazılım\nMühendisliği okuyorum. Programlamaya olan\nilgim ve teknolojiye duyduğum tutku beni bu\nalana yönlendirdi. Yazılım geliştirme süreçleri,\nalgoritma analizi ve veritabanı yönetimi gibi\nkonular üzerinde çalışarak kendimi geliştirmeye\ndevam ediyorum. ',
                     border: OutlineInputBorder(),
                   ),
                   maxLines: null,
-                  onSaved: (value) {
-                  },
+                  onSaved: (value) {},
                 ),
               ),
-
-              SizedBox(height: 16,),
-              Text("Eğitim",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold
+              SizedBox(
+                height: 16,
               ),
+              Text(
+                "Eğitim",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
-
-
+              SizedBox(height: 14),
               ElevatedButton(
                 onPressed: () {
                   showEdu();
@@ -178,12 +172,11 @@ class _ProfilePagesState extends State<ProfilePages> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  ), backgroundColor: Color(0xFFFA5805),
+                  ),
+                  backgroundColor: Color(0xFFFA5805),
                 ),
                 child: Text('Eğitim Ekle'),
               ),
-
-
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: edu.length,
@@ -195,12 +188,9 @@ class _ProfilePagesState extends State<ProfilePages> {
                       '${edu[index].Uni}, ${experiences[index].date}',
                     ),
                   );
-                 },
+                },
               ),
-
-
-
-
+              SizedBox(height: 14),
               Text(
                 'Yetenekler',
                 style: TextStyle(
@@ -208,23 +198,22 @@ class _ProfilePagesState extends State<ProfilePages> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 14),
               Wrap(
                 spacing: 8,
                 children: skills
                     .map(
                       (skill) => Chip(
-                    label: Text(skill),
-                    onDeleted: () {
-                      setState(() {
-                        skills.remove(skill);
-                      });
-                    },
-                  ),
-                )
+                        label: Text(skill),
+                        onDeleted: () {
+                          setState(() {
+                            skills.remove(skill);
+                          });
+                        },
+                      ),
+                    )
                     .toList(),
               ),
-              SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () {
                   showSkillsDialog();
@@ -232,13 +221,12 @@ class _ProfilePagesState extends State<ProfilePages> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  ), backgroundColor: Color(0xFFFA5805),
-
+                  ),
+                  backgroundColor: Color(0xFFFA5805),
                 ),
-
                 child: Text('Yetenek Seç'),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 14),
               Text(
                 'Diller',
                 style: TextStyle(
@@ -246,23 +234,22 @@ class _ProfilePagesState extends State<ProfilePages> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 14),
               Wrap(
                 spacing: 8,
                 children: languages
                     .map(
                       (language) => Chip(
-                    label: Text(language),
-                    onDeleted: () {
-                      setState(() {
-                        languages.remove(language);
-                      });
-                    },
-                  ),
-                )
+                        label: Text(language),
+                        onDeleted: () {
+                          setState(() {
+                            languages.remove(language);
+                          });
+                        },
+                      ),
+                    )
                     .toList(),
               ),
-              SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () {
                   showLanguagesDialog();
@@ -270,11 +257,12 @@ class _ProfilePagesState extends State<ProfilePages> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  ), backgroundColor: Color(0xFFFA5805),
+                  ),
+                  backgroundColor: Color(0xFFFA5805),
                 ),
                 child: Text('Dil Ekle'),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 14),
               Text(
                 'Deneyimler',
                 style: TextStyle(
@@ -282,7 +270,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 14),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: experiences.length,
@@ -303,7 +291,8 @@ class _ProfilePagesState extends State<ProfilePages> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  ), backgroundColor: Color(0xFFFA5805),
+                  ),
+                  backgroundColor: Color(0xFFFA5805),
                 ),
                 child: Text('Deneyim Ekle'),
               ),
@@ -344,25 +333,27 @@ class _ProfilePagesState extends State<ProfilePages> {
                 SizedBox(height: 8),
                 Wrap(
                   spacing: 8,
-                  children: skills.map(
+                  children: skills
+                      .map(
                         (skill) => Chip(
-                      label: Text(skill),
-                      onDeleted: () {
-                        setState(() {
-                          skills.remove(skill);
-                        });
-                      },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      backgroundColor: Colors.grey[300],
-                      deleteIconColor: Colors.black,
-                    ),
-                  ).toList(),
+                          label: Text(skill),
+                          onDeleted: () {
+                            setState(() {
+                              skills.remove(skill);
+                            });
+                          },
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          backgroundColor: Colors.grey[300],
+                          deleteIconColor: Colors.black,
+                        ),
+                      )
+                      .toList(),
                 ),
                 SizedBox(height: 8),
                 ...allSkills.map(
-                      (skill) => ListTile(
+                  (skill) => ListTile(
                     title: Text(skill),
                     onTap: () {
                       setState(() {
@@ -381,8 +372,6 @@ class _ProfilePagesState extends State<ProfilePages> {
       },
     );
   }
-
-
 
   void showLanguagesDialog() {
     showDialog(
@@ -412,7 +401,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                 ),
                 SizedBox(height: 8),
                 ...allLanguages.map(
-                      (language) => ListTile(
+                  (language) => ListTile(
                     title: Text(language),
                     onTap: () {
                       setState(() {
@@ -431,7 +420,6 @@ class _ProfilePagesState extends State<ProfilePages> {
       },
     );
   }
-
 
   void showContactDialog() {
     showDialog(
@@ -486,7 +474,8 @@ class _ProfilePagesState extends State<ProfilePages> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
-                    ), backgroundColor: Color(0xFFFA5805),
+                    ),
+                    backgroundColor: Color(0xFFFA5805),
                   ),
                   child: Text('Kaydet'),
                 ),
@@ -498,86 +487,83 @@ class _ProfilePagesState extends State<ProfilePages> {
     );
   }
 
-  void showEdu(){
+  void showEdu() {
     showDialog(
-        context: context,
-        builder: (context){
-          String school = " ";
-          String course = " ";
-           String Uni = " ";
-           String Year = " ";
+      context: context,
+      builder: (context) {
+        String school = " ";
+        String course = " ";
+        String Uni = " ";
+        String Year = " ";
 
-
-           return Dialog(
-             shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.circular(16),
-             ),
-             child: Padding(
-               padding: EdgeInsets.all(16),
-               child: Column(
-                 mainAxisSize: MainAxisSize.min,
-                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                 children: [
-                   Text(
-                     "Eğitim Ekle",
-                     style: TextStyle(
-                       fontSize: 18,
-                       fontWeight: FontWeight.bold,
-                     ),
-                   ),
-                   SizedBox(height: 16),
-                   TextFormField(
-                     decoration: InputDecoration(
-                       labelText: "Okul",
-                       border: OutlineInputBorder(),
-                     ),
-                     onChanged: (value){
-                       school = value;
-                     },
-                   ),
-                   SizedBox(height: 8),
-                   TextFormField(
-                     decoration: InputDecoration(
-                       labelText: "Bölüm",
-                       border: OutlineInputBorder(),
-                     ),
-                     onChanged: (value){
-                       course = value;
-                    },
-                   ),
-                   SizedBox(height: 8),
-                   TextFormField(
-                     decoration: InputDecoration(
-                       labelText: "GPA",
-                       border: OutlineInputBorder(),
-                     ),
-                     onChanged: (value){
-                       Uni = value;
-                     },
-                   ),
-                   SizedBox(height: 16),
-                 ElevatedButton(
-                   onPressed: () {
-                     setState(() {
-                       edu.add(edu as Edu);
-                     });
-                     Navigator.pop(context);
-                   },
-                   style: ElevatedButton.styleFrom(
-                     shape: RoundedRectangleBorder(
-                       borderRadius: BorderRadius.circular(30.0),
-                     ), backgroundColor: Color(0xFFFA5805),
-                   ),
-                   child: Text('Kaydet'),
-                 )],    )
-             )
-           );
-    },
+        return Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      "Eğitim Ekle",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: "Okul",
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (value) {
+                        school = value;
+                      },
+                    ),
+                    SizedBox(height: 8),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: "Bölüm",
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (value) {
+                        course = value;
+                      },
+                    ),
+                    SizedBox(height: 8),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: "GPA",
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (value) {
+                        Uni = value;
+                      },
+                    ),
+                    SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          edu.add(edu as Edu);
+                        });
+                        Navigator.pop(context);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                        backgroundColor: Color(0xFFFA5805),
+                      ),
+                      child: Text('Kaydet'),
+                    )
+                  ],
+                )));
+      },
     );
-        }
-
-
-
+  }
 
   void showExperienceDialog() {
     showDialog(
@@ -649,7 +635,8 @@ class _ProfilePagesState extends State<ProfilePages> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
-                    ), backgroundColor: Color(0xFFFA5805),
+                    ),
+                    backgroundColor: Color(0xFFFA5805),
                   ),
                   child: Text('Kaydet'),
                 ),
@@ -662,8 +649,7 @@ class _ProfilePagesState extends State<ProfilePages> {
   }
 }
 
-  void showExperienceDialog() {}
-
+void showExperienceDialog() {}
 
 class Edu {
   final String school;
@@ -676,12 +662,8 @@ class Edu {
     required this.course,
     required this.Uni,
     required this.Year,
-});
-
+  });
 }
-
-
-
 
 class Experience {
   final String company;

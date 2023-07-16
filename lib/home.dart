@@ -322,6 +322,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: ListTile(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => JobDetail(
+                              company: recent,
+                            ),
+                          ),
+                        );
+                      },
                       leading: Container(
                         width: 50.0,
                         height: 50.0,
@@ -338,10 +348,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Text(
                               "${recent.companyName} • ${recent.mainCriteria}"),
-                          IconButton(
-                            icon: Icon(Icons.bookmark),
-                            onPressed: () {},
-                          ),
                         ],
                       ),
                       trailing: Icon(

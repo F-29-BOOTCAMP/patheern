@@ -19,12 +19,16 @@ class _RegisterPageState extends State<RegisterPage> {
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
   final _auth = FirebaseAuth.instance;
+  bool _isPasswordVisible = false;
+  bool _isConfirmPasswordVisible = false;
 
   Future<void> _register() async {
     try {
       if (_passwordController.text != _confirmPasswordController.text) {
         throw FirebaseAuthException(
-            message: "Passwords do not match", code: '');
+          message: "Passwords do not match",
+          code: '',
+        );
       }
 
       UserCredential userCredential =
@@ -53,7 +57,7 @@ class _RegisterPageState extends State<RegisterPage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:[
+          children: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 14.0),
               child: PatheernTaskTextField(
@@ -67,7 +71,17 @@ class _RegisterPageState extends State<RegisterPage> {
               child: PatheernTaskTextField(
                 controller: _passwordController,
                 hintText: 'Password',
-                obscureText: true,
+                obscureText: !_isPasswordVisible,
+                suffixIcon: IconButton(
+                  icon: Icon(_isPasswordVisible
+                      ? Icons.visibility
+                      : Icons.visibility_off),
+                  onPressed: () {
+                    setState(() {
+                      _isPasswordVisible = !_isPasswordVisible;
+                    });
+                  },
+                ),
               ),
             ),
             SizedBox(height: 20.0),
@@ -76,7 +90,17 @@ class _RegisterPageState extends State<RegisterPage> {
               child: PatheernTaskTextField(
                 controller: _confirmPasswordController,
                 hintText: 'Confirm Password',
-                obscureText: true,
+                obscureText: !_isConfirmPasswordVisible,
+                suffixIcon: IconButton(
+                  icon: Icon(_isConfirmPasswordVisible
+                      ? Icons.visibility
+                      : Icons.visibility_off),
+                  onPressed: () {
+                    setState(() {
+                      _isConfirmPasswordVisible = !_isConfirmPasswordVisible;
+                    });
+                  },
+                ),
               ),
             ),
             SizedBox(height: 20.0),

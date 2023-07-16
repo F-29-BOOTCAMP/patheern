@@ -17,6 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   final eMailController = TextEditingController();
   final passwordController = TextEditingController();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+  bool _isPasswordVisible = false;
 
   void signUserIn() async {
     showDialog(
@@ -120,12 +121,23 @@ class _LoginPageState extends State<LoginPage> {
                   padding: EdgeInsets.symmetric(horizontal: 20.0),
                   child: TextFormField(
                     controller: passwordController,
+                    obscureText: !_isPasswordVisible,
                     decoration: InputDecoration(
                       labelText: 'Password',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       filled: true,
+                      suffixIcon: IconButton(
+                        icon: Icon(_isPasswordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                        onPressed: () {
+                          setState(() {
+                            _isPasswordVisible = !_isPasswordVisible;
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ),

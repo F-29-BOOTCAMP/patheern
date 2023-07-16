@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:patheern/authentication/login_page.dart';
 import 'package:patheern/models/company.dart';
 import 'package:patheern/constants.dart';
 import 'package:patheern/widgets/company_card.dart';
@@ -11,9 +12,9 @@ import 'package:patheern/page/profile.dart';
 import '../page/job_detail.dart';
 import 'package:patheern/page/save_page.dart';
 import 'package:patheern/page/search_page.dart';
-import 'package:patheern/page/menu_page/ayarlar_page.dart';
+import 'package:patheern/page/menu_page/settings_page.dart';
 import 'package:patheern/page/menu_page/basvuru.dart';
-import 'package:patheern/page/menu_page/bildirim_page.dart';
+import 'package:patheern/page/menu_page/notification_page.dart';
 import 'package:patheern/page/menu_page/favorites_page.dart';
 import 'package:patheern/page/map_page.dart';
 
@@ -58,8 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) =>
-                  EmptyPage(), // Harita sayfasına yönlendirme
+              builder: (context) => EmptyPage(), // Harita sayfasına yönlendirme
             ),
           );
           break;
@@ -189,8 +189,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: Text('Çıkış'),
               leading: Icon(Icons.exit_to_app),
-              onTap: () =>
-                  null, ////////////////////// eklenecek ve kayıt ol sayfasına yönlendirecek
+              onTap: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  (route) => false,
+                );
+              },
             ),
           ],
         ),
@@ -334,8 +339,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               "${recent.companyName} • ${recent.mainCriteria}"),
                           IconButton(
                             icon: Icon(Icons.bookmark),
-                            onPressed: () {
-                            },
+                            onPressed: () {},
                           ),
                         ],
                       ),

@@ -4,11 +4,13 @@ class PatheernTaskTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final bool obscureText;
+  final IconButton? suffixIcon;
 
   const PatheernTaskTextField({
     required this.controller,
     required this.hintText,
     this.obscureText = false,
+    this.suffixIcon,
     Key? key,
   }) : super(key: key);
 
@@ -22,8 +24,10 @@ class PatheernTaskTextField extends StatelessWidget {
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           labelText: hintText,
+          suffixIcon: suffixIcon,
         ),
       ),
     );
   }
 }
+

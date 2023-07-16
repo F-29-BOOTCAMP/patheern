@@ -1,6 +1,9 @@
 import 'package:patheern/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:patheern/authentication/forgot_password.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatefulWidget {
   final Function()? onTap;
@@ -12,8 +15,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final eMailController = TextEditingController();
-
   final passwordController = TextEditingController();
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   void signUserIn() async {
     showDialog(
@@ -28,10 +31,12 @@ class _LoginPageState extends State<LoginPage> {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: eMailController.text, password: passwordController.text);
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) =>  MyHomePage()));
+        context,
+        MaterialPageRoute(builder: (context) => MyHomePage()),
+      );
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
-      showErrorMessage(e.code);
+      showErrorMessage(e.toString());
     }
   }
 
@@ -46,6 +51,38 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  void navigateToForgotPassword() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+    );
+  }
+
+  void signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser!.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      final UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+
+      final User? user = userCredential.user;
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MyHomePage()),
+      );
+    } catch (e) {
+      print('Error signing in with Google: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double sHeight = MediaQuery.of(context).size.height;
@@ -55,606 +92,170 @@ class _LoginPageState extends State<LoginPage> {
       width: sWidth,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xFFFA5805),
           title: const Text('Login'),
+          centerTitle: true,
         ),
-        body: Column(
-          children: [
-            TextFormField(
-              controller: eMailController,
-              decoration: const InputDecoration(labelText: 'Email'),
-            ),
-            TextFormField(
-              controller: passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            ElevatedButton(
-              onPressed: signUserIn,
-              child: const Text('Sign in'),
-            ),
-          ],
+        backgroundColor: Color(0xFFD2D2D2),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: TextFormField(
+                  controller: eMailController,
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    filled: true,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.0),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: TextFormField(
+                  controller: passwordController,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    filled: true,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.0),
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: GestureDetector(
+                  onTap: navigateToForgotPassword,
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 42, 61, 109),
+                      fontWeight: FontWeight
+                          .bold, 
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.0),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: ElevatedButton(
+                  onPressed: signUserIn,
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF0A426F),
+                    minimumSize: Size(sWidth, 50.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0),
+                    ),
+                  ),
+                  child: Text(
+                    'Sign In',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 1.0,
+                    width: 140.0,
+                    color: Colors.black,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      'or',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 1.0,
+                    width: 140.0,
+                    color: Colors.black,
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.0),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: ElevatedButton(
+                  onPressed: signInWithGoogle,
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF0A426F),
+                    minimumSize: Size(sWidth, 50.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/google.svg',
+                        width: 24.0,
+                        height: 24.0,
+                      ),
+                      SizedBox(width: 10.0),
+                      Text(
+                        'Sign in with Google',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.0),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: ElevatedButton(
+                  onPressed: signInWithGoogle,
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF0A426F),
+                    minimumSize: Size(sWidth, 50.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/linkedin.svg',
+                        width: 24.0,
+                        height: 24.0,
+                      ),
+                      SizedBox(width: 10.0),
+                      Text(
+                        'Sign in with Linkedin',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-//sonradan ekle
-/*
-
-Container(
-  // iphone1424aV (37:2939)
-  width:  double.infinity,
-  height:  844*fem,
-  decoration:  BoxDecoration (
-    color:  Color(0xfff3f3f3),
-    borderRadius:  BorderRadius.circular(16*fem),
-  ),
-  child:  
-Stack(
-  children:  [
-Positioned(
-  // autogroupobxdkiD (J8oA28GcecHmiBHhz1oBxd)
-  left:  0*fem,
-  top:  0*fem,
-  child:  
-Container(
-  width:  390*fem,
-  height:  690*fem,
-  child:  
-Stack(
-  children:  [
-Positioned(
-  // autogroupulfbTMj (J8o98QFoReErFoGbh7uLfB)
-  left:  64*fem,
-  top:  366*fem,
-  child:  
-Container(
-  width:  230*fem,
-  height:  40*fem,
-  child:  
-Stack(
-  children:  [
-Positioned(
-  // line35nQ1 (55:2634)
-  left:  0*fem,
-  top:  37*fem,
-  child:  
-Align(
-  child:  
-SizedBox(
-  width:  230*fem,
-  height:  1*fem,
-  child:  
-Container(
-  decoration:  BoxDecoration (
-    color:  Color(0xff000000),
-  ),
-),
-),
-),
-),
-Positioned(
-  // vector5P7 (11:502)
-  left:  0*fem,
-  top:  17*fem,
-  child:  
-Align(
-  child:  
-SizedBox(
-  width:  24*fem,
-  height:  6.01*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  24*fem,
-  height:  6.01*fem,
-),
-),
-),
-),
-Positioned(
-  // vectorb6Z (11:501)
-  left:  0*fem,
-  top:  11*fem,
-  child:  
-Align(
-  child:  
-SizedBox(
-  width:  24*fem,
-  height:  18*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  24*fem,
-  height:  18*fem,
-),
-),
-),
-),
-Positioned(
-  // emailiS5 (11:503)
-  left:  45*fem,
-  top:  0*fem,
-  child:  
-Align(
-  child:  
-SizedBox(
-  width:  41*fem,
-  height:  40*fem,
-  child:  
-Text(
-  'Email',
-  style:  SafeGoogleFont (
-    'Inter',
-    fontSize:  16*ffem,
-    fontWeight:  FontWeight.w500,
-    height:  2.5*ffem/fem,
-    color:  Color(0xff585858),
-  ),
-),
-),
-),
-),
-  ],
-),
-),
-),
-Positioned(
-  // line36bkm (55:2635)
-  left:  67*fem,
-  top:  465*fem,
-  child:  
-Align(
-  child:  
-SizedBox(
-  width:  227*fem,
-  height:  1*fem,
-  child:  
-Container(
-  decoration:  BoxDecoration (
-    color:  Color(0xff000000),
-  ),
-),
-),
-),
-),
-Positioned(
-  // autogroupaqbwiKb (J8o9HtyymxNfts2nw9aqbw)
-  left:  67*fem,
-  top:  422*fem,
-  child:  
-Container(
-  width:  227*fem,
-  height:  40*fem,
-  child:  
-Row(
-  crossAxisAlignment:  CrossAxisAlignment.center,
-  children:  [
-Container(
-  // vector2bB (11:505)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 3*fem, 0*fem),
-  width:  22*fem,
-  height:  24*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  22*fem,
-  height:  24*fem,
-),
-),
-Container(
-  // passwordY3j (11:504)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 103*fem, 0*fem),
-  child:  
-Text(
-  'Password',
-  style:  SafeGoogleFont (
-    'Inter',
-    fontSize:  16*ffem,
-    fontWeight:  FontWeight.w500,
-    height:  2.5*ffem/fem,
-    color:  Color(0xff585858),
-  ),
-),
-),
-Container(
-  // groupTgV (11:497)
-  margin:  EdgeInsets.fromLTRB(0*fem, 6*fem, 0*fem, 0*fem),
-  width:  24*fem,
-  height:  18*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  24*fem,
-  height:  18*fem,
-),
-),
-  ],
-),
-),
-),
-Positioned(
-  // autogroup3uq1nCy (J8o9ZUNMqmRKr4oJZu3UQ1)
-  left:  43*fem,
-  top:  574*fem,
-  child:  
-Container(
-  width:  290*fem,
-  height:  47*fem,
-  decoration:  BoxDecoration (
-    image:  DecorationImage (
-      fit:  BoxFit.cover,
-      image:  NetworkImage (
-        [Image url]
-      ),
-    ),
-  ),
-  child:  
-Center(
-  child:  
-Text(
-  'Sign up ',
-  style:  SafeGoogleFont (
-    'Urbanist',
-    fontSize:  32*ffem,
-    fontWeight:  FontWeight.w700,
-    height:  1.2000000477*ffem/fem,
-    color:  Color(0xffffffff),
-  ),
-),
-),
-),
-),
-Positioned(
-  // forgotpassword3Po (11:472)
-  left:  130*fem,
-  top:  642*fem,
-  child:  
-Align(
-  child:  
-SizedBox(
-  width:  130*fem,
-  height:  19*fem,
-  child:  
-Text(
-  'Forgot password?',
-  textAlign:  TextAlign.center,
-  style:  SafeGoogleFont (
-    'Inter',
-    fontSize:  15*ffem,
-    fontWeight:  FontWeight.w600,
-    height:  1.2125*ffem/fem,
-    color:  Color(0xff246bfd),
-  ),
-),
-),
-),
-),
-Positioned(
-  // autogroupsku1vyP (J8o9SE5S9qtwE9ZRFZSkU1)
-  left:  110*fem,
-  top:  508*fem,
-  child:  
-Container(
-  width:  140*fem,
-  height:  40*fem,
-  child:  
-Row(
-  crossAxisAlignment:  CrossAxisAlignment.center,
-  children:  [
-Container(
-  // rectangle8fg5 (11:493)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 9*fem, 2*fem),
-  width:  20*fem,
-  height:  18*fem,
-  decoration:  BoxDecoration (
-    borderRadius:  BorderRadius.circular(5*fem),
-    border:  Border.all(color Color(0xff007fff)),
-  ),
-),
-Text(
-  // remembermebZj (11:496)
-  'Remember me',
-  style:  SafeGoogleFont (
-    'Inter',
-    fontSize:  16*ffem,
-    fontWeight:  FontWeight.w500,
-    height:  2.5*ffem/fem,
-    color:  Color(0xff000000),
-  ),
-),
-  ],
-),
-),
-),
-Positioned(
-  // autogrouptjfpM37 (J8o8ouncRmfJY9RAkKtjfP)
-  left:  48*fem,
-  top:  65*fem,
-  child:  
-Container(
-  width:  308*fem,
-  height:  50*fem,
-  child:  
-Row(
-  crossAxisAlignment:  CrossAxisAlignment.center,
-  children:  [
-Container(
-  // autogroup73rbGfs (J8o8xjsEWQsfRuckc173RB)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 8*fem, 0*fem),
-  width:  150*fem,
-  height:  double.infinity,
-  decoration:  BoxDecoration (
-    color:  Color(0xffd9d9d9),
-    borderRadius:  BorderRadius.circular(7*fem),
-  ),
-  child:  
-Center(
-  child:  
-Text(
-  'Register',
-  textAlign:  TextAlign.center,
-  style:  SafeGoogleFont (
-    'Urbanist',
-    fontSize:  20*ffem,
-    fontWeight:  FontWeight.w700,
-    height:  1.2*ffem/fem,
-    color:  Color(0xff000000),
-  ),
-),
-),
-),
-Container(
-  // autogroupt1n1jZT (J8o92571rmUyARRoXmT1N1)
-  width:  150*fem,
-  height:  double.infinity,
-  decoration:  BoxDecoration (
-    color:  Color(0xfff2ab59),
-    borderRadius:  BorderRadius.circular(7*fem),
-  ),
-  child:  
-Center(
-  child:  
-Text(
-  'Login',
-  textAlign:  TextAlign.center,
-  style:  SafeGoogleFont (
-    'Urbanist',
-    fontSize:  20*ffem,
-    fontWeight:  FontWeight.w700,
-    height:  1.2*ffem/fem,
-    color:  Color(0xff000000),
-  ),
-),
-),
-),
-  ],
-),
-),
-),
-Positioned(
-  // logintoyouraccountQvV (55:2643)
-  left:  96*fem,
-  top:  305*fem,
-  child:  
-Align(
-  child:  
-SizedBox(
-  width:  170*fem,
-  height:  40*fem,
-  child:  
-Text(
-  'Login to Your Account',
-  style:  SafeGoogleFont (
-    'Inter',
-    fontSize:  16*ffem,
-    fontWeight:  FontWeight.w500,
-    height:  2.5*ffem/fem,
-    color:  Color(0xff000000),
-  ),
-),
-),
-),
-),
-Positioned(
-  // rectangle19252S5 (73:2762)
-  left:  89*fem,
-  top:  182*fem,
-  child:  
-Align(
-  child:  
-SizedBox(
-  width:  205*fem,
-  height:  108*fem,
-  child:  
-Container(
-  decoration:  BoxDecoration (
-    color:  Color(0xffd9d9d9),
-  ),
-),
-),
-),
-),
-  ],
-),
-),
-),
-Positioned(
-  // autogroupb1eqLhf (J8o9fDhnRRsRnZ2KGSb1eq)
-  left:  0*fem,
-  top:  690*fem,
-  child:  
-Container(
-  width:  493*fem,
-  height:  20*fem,
-  child:  
-Row(
-  crossAxisAlignment:  CrossAxisAlignment.center,
-  children:  [
-Container(
-  // line37eyF (55:2636)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 8*fem, 1*fem),
-  width:  175*fem,
-  height:  1*fem,
-  decoration:  BoxDecoration (
-    color:  Color(0xff000000),
-  ),
-),
-Container(
-  // orcontinuewithnZf (11:492)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 10*fem, 0*fem),
-  child:  
-Text(
-  'or Continue with',
-  textAlign:  TextAlign.center,
-  style:  SafeGoogleFont (
-    'Inter',
-    fontSize:  16*ffem,
-    fontWeight:  FontWeight.w400,
-    height:  1.2125*ffem/fem,
-    color:  Color(0xff000000),
-  ),
-),
-),
-Container(
-  // line38t6u (55:2637)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3*fem),
-  width:  175*fem,
-  height:  1*fem,
-  decoration:  BoxDecoration (
-    color:  Color(0xff000000),
-  ),
-),
-  ],
-),
-),
-),
-Positioned(
-  // autogroupevmopFT (J8o9o8eGP2KH9mpoy8evmo)
-  left:  35*fem,
-  top:  746*fem,
-  child:  
-Container(
-  width:  306*fem,
-  height:  50*fem,
-  child:  
-Row(
-  crossAxisAlignment:  CrossAxisAlignment.center,
-  children:  [
-Container(
-  // ln8X3 (11:476)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 71.99*fem, 0*fem),
-  width:  49.01*fem,
-  height:  50*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  49.01*fem,
-  height:  50*fem,
-),
-),
-Container(
-  // googleT3X (11:480)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 85*fem, 0*fem),
-  width:  50*fem,
-  height:  50*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  50*fem,
-  height:  50*fem,
-),
-),
-Container(
-  // appleBER (11:487)
-  width:  50*fem,
-  height:  50*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  50*fem,
-  height:  50*fem,
-),
-),
-  ],
-),
-),
-),
-Positioned(
-  // darkmodefalsetypedefaultKLd (55:2612)
-  left:  21*fem,
-  top:  8.0001220703*fem,
-  child:  
-Container(
-  width:  339.33*fem,
-  height:  25*fem,
-  child:  
-Row(
-  crossAxisAlignment:  CrossAxisAlignment.start,
-  children:  [
-Container(
-  // leftsideEyP (55:2629)
-  margin:  EdgeInsets.fromLTRB(0*fem, 4*fem, 218.67*fem, 0*fem),
-  width:  54*fem,
-  height:  21*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  54*fem,
-  height:  21*fem,
-),
-),
-Container(
-  // rightsideYUH (55:2613)
-  child:  
-Row(
-  crossAxisAlignment:  CrossAxisAlignment.end,
-  children:  [
-Container(
-  // autogroupuuzb6kh (J8oB8LvcSQd6AV6kkXUuZB)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 5.03*fem, 0.33*fem),
-  width:  17*fem,
-  height:  20.33*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  17*fem,
-  height:  20.33*fem,
-),
-),
-Container(
-  // wifipRo (55:2618)
-  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 5.03*fem, 0.37*fem),
-  width:  15.27*fem,
-  height:  10.97*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  15.27*fem,
-  height:  10.97*fem,
-),
-),
-Container(
-  // batterywFX (55:2614)
-  width:  24.33*fem,
-  height:  11.33*fem,
-  child:  
-Image.network(
-  [Image url]
-  width:  24.33*fem,
-  height:  11.33*fem,
-),
-),
-  ],
-),
-),
-  ],
-),
-),
-),
-  ],
-),
-),
-
-*/

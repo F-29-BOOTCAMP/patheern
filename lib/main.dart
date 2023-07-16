@@ -31,9 +31,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class Splash extends StatefulWidget {
-  const Splash({super.key});
+  const Splash({Key? key}) : super(key: key);
 
   @override
   _SplashState createState() => _SplashState();
@@ -43,9 +42,11 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 20), () async {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => LoginOrRegisterPage()));
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginOrRegisterPage()),
+      );
     });
   }
 
@@ -60,22 +61,14 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
               width: double.infinity,
               height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
-                color: Color(0xfff3f3f3),
+                color: const Color(0xfff3f3f3),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  Text(
-                    "Splash Screen",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 25),
+                  SizedBox(height: 20),
                 ],
               ),
             ),
@@ -89,13 +82,14 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      '[Image url]',
+                      'patheern.png',
                       width: 54,
                       height: 21,
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'Hello Fellow\n\nWelcome to PATHEERN we are happy to have you with us\nWe are here to accompany on your journey untÄ±l everything goes according to your plan.',
+                      'Hello Fellow\n\nWelcome to PATHEERN, we are happy to have you with us.\nWe are here to accompany you on your journey until everything goes according to your plan.',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,

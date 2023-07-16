@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:patheern/authentication/login_page.dart';
 import 'package:patheern/models/company.dart';
-import 'package:patheern/constants.dart';
+import 'package:patheern/views/constants.dart';
 import 'package:patheern/widgets/company_card.dart';
 import 'package:patheern/widgets/company_card2.dart';
 import 'package:patheern/page/profile_page.dart';
@@ -47,15 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           );
           break;
-        case 2: // Ara öğesi
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SearchPage(), // Ara sayfasına yönlendirme
-            ),
-          );
-          break;
-        case 3: // Harita öğesi
+        case 2: // Harita öğesi
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -63,6 +55,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           );
           break;
+        case 3: // Ara öğesi
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SearchPage(), // Ara sayfasına yönlendirme
+            ),
+          );
+          break;
+
         case 4: // Profil öğesi
           Navigator.push(
             context,
@@ -356,35 +357,41 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Ana Sayfa',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bookmarks),
-            label: 'Kaydedilenler',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Ara',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map),
-            label: 'Haritalar',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xFF0A426F),
-        unselectedItemColor: Color(0xFFFA5805),
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
-        onTap: _onItemTapped,
+      bottomNavigationBar: Theme(
+        data: ThemeData(
+          canvasColor: Color(
+              0xFF0A426F), // Alt navigasyon çubuğunun arkaplan rengini belirler
+        ),
+        child: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Ana Sayfa',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bookmarks),
+              label: 'Kaydedilenler',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+              label: 'Haritalar',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Ara',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profil',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Color(0xFFFA5805),
+          unselectedItemColor: Color(0xFFF2EEEB),
+          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+          unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
+          onTap: _onItemTapped,
+        ),
       ),
     );
   }

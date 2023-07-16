@@ -10,11 +10,29 @@ class _FilterPageState extends State<FilterPage> {
   List<String> _selectedOptions = [];
 
   List<String> _options = [
-    'Seçenek 1',
-    'Seçenek 2',
-    'Seçenek 3',
-    'Seçenek 4',
-    'Seçenek 5',
+    'İstanbul',
+    'Ankara',
+    'İzmir',
+    'Yazılım',
+    'Muhasebe',
+    'Sağlık',
+    'Finans',
+    'Staj Süresi',
+    '20 Gün',
+    '3 Ay',
+    'Şirket Türü',
+    'Startup',
+    'Kamu',
+    'Ücretli Staj',
+    'Ücretsiz Staj',
+    'Türkçe',
+    'İngilizce',
+    'Almanca',
+    'Tarih',
+    'Lisans',
+    'Yüksek Lisans',
+    'Doktora',
+    'Uzaklık',
   ];
 
   void _applyFilters() {

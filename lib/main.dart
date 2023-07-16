@@ -1,5 +1,5 @@
 import 'package:patheern/authentication/login_or_register_page.dart';
-import 'package:patheern/views/home.dart';
+import 'package:patheern/home.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:patheern/authentication/auth_page.dart';

@@ -1,4 +1,4 @@
-import 'package:patheern/views/home.dart';
+import 'package:patheern/home.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:patheern/authentication/forgot_password.dart';

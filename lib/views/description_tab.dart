@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:patheern/constants.dart';
+import 'package:patheern/views/constants.dart';
 import 'package:patheern/models/company.dart';
 
 class DescriptionTab extends StatelessWidget {

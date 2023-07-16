@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -91,6 +92,151 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+*/
+
+
+import 'package:flutter/material.dart';
+
+class ProfilePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF0A426F),
+        centerTitle: true,
+        title: Text('Profil'),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    radius: 70.0,
+                    backgroundColor: Colors.blue,
+                    child: CircleAvatar(
+                      radius: 66.0,
+                      backgroundImage: AssetImage(
+                        'assets/patheern.png', //profil resmi
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 16.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Vunay Yavaş',
+                        style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 8.0),
+                      Text(
+                        'Yazılım Geliştirici',
+                        style: TextStyle(fontSize: 18.0, color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                'Hakkımda',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                'Merhaba, ben bir yazılım öğrencisiyim. Yeniliklere açık, motive olmuş ve çözüm odaklı bir yaklaşıma sahibim. Öğrenmeye ve kendimi geliştirmeye her zaman açığım. İyi bir takım oyuncusu olarak işbirliği yapmayı ve iletişim becerilerimi kullanmayı seviyorum. Hedefim, kaliteli ve yenilikçi yazılımlar üretmek. Yeni teknolojilere ve trendlere ilgi duyuyor, sürekli olarak kendimi geliştirme fırsatları arıyorum. Yazılım alanında büyümek ve başarıya ulaşmak için çalışıyorum.',
+                style: TextStyle(fontSize: 16.0),
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                'Yetenekler',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 8.0),
+              Wrap(
+                spacing: 8.0,
+                runSpacing: 8.0,
+                children: [
+                  Chip(
+                    label: Text('Flutter'),
+                  ),
+                  Chip(
+                    label: Text('Dart'),
+                  ),
+                  Chip(
+                    label: Text('Firebase'),
+                  ),
+                  Chip(
+                    label: Text('HTML'),
+                  ),
+                  Chip(
+                    label: Text('CSS'),
+                  ),
+                  Chip(
+                    label: Text('JavaScript'),
+                  ),
+                  Chip(
+                    label: Text('Python'),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                'Eğitim',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                'Bilgisayar Mühendisliği Lisansı - XYZ Üniversitesi',
+                style: TextStyle(fontSize: 16.0),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                'Lise - ABC Anadolu Lisesi',
+                style: TextStyle(fontSize: 16.0),
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                'İş Deneyimi',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                'Stajyer Yazılım Geliştirici - XYZ Şirketi',
+                style: TextStyle(fontSize: 16.0),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                'Stajyer Web Tasarımcısı - ABC Ajansı',
+                style: TextStyle(fontSize: 16.0),
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                'İletişim',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                'E-posta: vunay@icloud.com',
+                style: TextStyle(fontSize: 16.0),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                'Telefon: 555-123-4567',
+                style: TextStyle(fontSize: 16.0),
+              ),
+            ],
+          ),
         ),
       ),
     );

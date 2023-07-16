@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patheern/models/company.dart';
-import 'package:patheern/constants.dart';
+import 'package:patheern/views/constants.dart';
 import 'package:patheern/views/company_tab.dart';
 import 'package:patheern/views/description_tab.dart';
 

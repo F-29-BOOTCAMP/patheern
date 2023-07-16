@@ -94,28 +94,72 @@ class _SearchPageState extends State<SearchPage> {
                 ? DropdownButtonFormField<String>(
                     items: [
                       DropdownMenuItem(
-                        child: Text('Filtre 1'),
-                        value: 'Filtre 1',
+                        child: Text('İstanbul'),
+                        value: 'İstanbul',
                       ),
                       DropdownMenuItem(
-                        child: Text('Filtre 2'),
-                        value: 'Filtre 2',
+                        child: Text('Ankara'),
+                        value: 'Ankara',
                       ),
                       DropdownMenuItem(
-                        child: Text('Filtre 3'),
-                        value: 'Filtre 3',
+                        child: Text('Yazılım'),
+                        value: 'Yazılım',
                       ),
                       DropdownMenuItem(
-                        child: Text('Filtre 4'),
-                        value: 'Filtre 4',
+                        child: Text('Sağlık'),
+                        value: 'Sağlık',
                       ),
                       DropdownMenuItem(
-                        child: Text('Filtre 5'),
-                        value: 'Filtre 5',
+                        child: Text('Finans'),
+                        value: 'Finans',
                       ),
                       DropdownMenuItem(
-                        child: Text('Filtre 6'),
-                        value: 'Filtre 6',
+                        child: Text('Staj Süresi'),
+                        value: 'Staj Süresi',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('20 Gün'),
+                        value: '20 Gün',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('3 Ay'),
+                        value: '3 Ay',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Startup'),
+                        value: 'Startup',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Kamu'),
+                        value: 'Kamu',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Ücretli Staj'),
+                        value: 'Ücretli Staj',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Ücretsiz Staj'),
+                        value: 'Ücretsiz Staj',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Türkçe'),
+                        value: 'Türkçe',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('İngilizce'),
+                        value: 'İngilizce',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Lisans'),
+                        value: 'Lisans',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Yüksek Lisans'),
+                        value: 'Yüksek Lisans',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Doktora'),
+                        value: 'Doktora',
                       ),
                     ],
                     onChanged: (value) {

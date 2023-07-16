@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ProfilePage(), // Profil sayfasına yönlendirme
+                      ProfilePage(), 
                 ),
               );
             },
@@ -257,7 +257,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  FilterPage(), // Filter sayfasına yönlendirme
+                                  FilterPage(), 
                             ),
                           );
                         },
@@ -366,7 +366,7 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: Theme(
         data: ThemeData(
           canvasColor: Color(
-              0xFF0A426F), // Alt navigasyon çubuğunun arkaplan rengini belirler
+              0xFF0A426F), // Alt navigasyon çubuğunun arkaplan rengini 
         ),
         child: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[

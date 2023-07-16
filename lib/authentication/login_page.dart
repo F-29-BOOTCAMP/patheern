@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
         MaterialPageRoute(builder: (context) => MyHomePage()),
       );
     } catch (e) {
-      print('Error signing in with Google: $e');
+      print('Google ile oturum açma hatası: $e');
     }
   }
 
@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFFFA5805),
-          title: const Text('Login'),
+          title: const Text('Oturum Aç'),
           centerTitle: true,
         ),
         backgroundColor: Color(0xFFD2D2D2),
@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: TextFormField(
                     controller: eMailController,
                     decoration: InputDecoration(
-                      labelText: 'Email',
+                      labelText: 'E-posta',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
@@ -123,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                     controller: passwordController,
                     obscureText: !_isPasswordVisible,
                     decoration: InputDecoration(
-                      labelText: 'Password',
+                      labelText: 'Şifre',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
@@ -148,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: GestureDetector(
                     onTap: navigateToForgotPassword,
                     child: Text(
-                      'Forgot Password?',
+                      'Şifrenizi mi unuttunuz?',
                       style: TextStyle(
                         color: Color.fromARGB(255, 42, 61, 109),
                         fontWeight: FontWeight.bold,
@@ -169,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     child: Text(
-                      'Sign In',
+                      'Giriş Yap',
                       style: TextStyle(
                         fontSize: 20,
                       ),
@@ -188,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
-                        'or',
+                        'veya',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -224,7 +224,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         SizedBox(width: 10.0),
                         Text(
-                          'Sign in with Google',
+                          'Google ile giriş yap',
                           style: TextStyle(
                             fontSize: 20,
                           ),
@@ -255,7 +255,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         SizedBox(width: 10.0),
                         Text(
-                          'Sign in with Linkedin',
+                          'Linkedin ile giriş yap',
                           style: TextStyle(
                             fontSize: 20,
                           ),

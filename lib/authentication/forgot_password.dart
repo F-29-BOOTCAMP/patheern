@@ -20,15 +20,15 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text('Password Reset'),
-              content: Text('A password reset email has been sent to $email.'),
+              title: Text('Şifre Sıfırlama'),
+              content: Text('Şifre sıfırlama e-postası gönderildi $email.'),
               actions: [
                 TextButton(
                   onPressed: () {
                     Navigator.pop(context);
                     Navigator.pop(context);
                   },
-                  child: Text('OK'),
+                  child: Text('Tamam'),
                 ),
               ],
             );
@@ -39,14 +39,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text('Error'),
+              title: Text('Hata'),
               content: Text(e.toString()),
               actions: [
                 TextButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text('OK'),
+                  child: Text('Tamam'),
                 ),
               ],
             );
@@ -58,14 +58,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Error'),
-            content: Text('Please enter your email.'),
+            title: Text('Hata'),
+            content: Text('Lütfen e-posta adresinizi girin.'),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text('OK'),
+                child: Text('Tamam'),
               ),
             ],
           );
@@ -78,7 +78,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Forgot Password'),
+        title: Text('Şifremi Unuttum'),
         backgroundColor: Color(0xFFFA5805),
       ),
       body: Padding(
@@ -89,7 +89,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             TextField(
               controller: _emailController,
               decoration: InputDecoration(
-                labelText: 'Email',
+                labelText: 'E-posta',
               ),
             ),
             SizedBox(height: 20.0),
@@ -98,7 +98,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               style: ElevatedButton.styleFrom(
                 primary: Color(0xFF0A426F), 
               ),
-              child: Text('Reset Password'),
+              child: Text('Şifre Sıfırlama'),
             ),
           ],
         ),

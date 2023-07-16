@@ -26,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
     try {
       if (_passwordController.text != _confirmPasswordController.text) {
         throw FirebaseAuthException(
-          message: "Passwords do not match",
+          message: "Şifreler eşleşmiyor",
           code: '',
         );
       }
@@ -37,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
         password: _passwordController.text,
       );
     } on FirebaseAuthException catch (e) {
-      print('Failed with error code: ${e.code}');
+      print('Hata koduyla başarısız oldu: ${e.code}');
       print(e.message);
     }
   }
@@ -46,7 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register'),
+        title: Text('Kayıt Ol'),
         backgroundColor: Color(0xFFFA5805),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -62,7 +62,7 @@ class _RegisterPageState extends State<RegisterPage> {
               padding: EdgeInsets.symmetric(horizontal: 14.0),
               child: PatheernTaskTextField(
                 controller: _emailController,
-                hintText: 'Email',
+                hintText: 'E-posta',
               ),
             ),
             SizedBox(height: 20.0),
@@ -70,7 +70,7 @@ class _RegisterPageState extends State<RegisterPage> {
               padding: EdgeInsets.symmetric(horizontal: 14.0),
               child: PatheernTaskTextField(
                 controller: _passwordController,
-                hintText: 'Password',
+                hintText: 'Şifre',
                 obscureText: !_isPasswordVisible,
                 suffixIcon: IconButton(
                   icon: Icon(_isPasswordVisible
@@ -89,7 +89,7 @@ class _RegisterPageState extends State<RegisterPage> {
               padding: EdgeInsets.symmetric(horizontal: 14.0),
               child: PatheernTaskTextField(
                 controller: _confirmPasswordController,
-                hintText: 'Confirm Password',
+                hintText: 'Şifre Onayı',
                 obscureText: !_isConfirmPasswordVisible,
                 suffixIcon: IconButton(
                   icon: Icon(_isConfirmPasswordVisible
@@ -116,7 +116,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
                 child: Text(
-                  'Register',
+                  'Kayıt Ol',
                   style: TextStyle(
                     fontSize: 18,
                   ),

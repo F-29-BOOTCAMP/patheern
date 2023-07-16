@@ -16,7 +16,7 @@ class AuthPage extends StatelessWidget {
         } else if (snapshot.hasData) {
           return DashboardPage();
         } else if (snapshot.hasError) {
-          return Center(child: Text('Something went wrong!'));
+          return Center(child: Text('Bir şeyler yanlış gitti!'));
         } else {
           return LoginPage();
         }

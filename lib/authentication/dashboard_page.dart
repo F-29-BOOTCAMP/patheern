@@ -23,7 +23,7 @@ class DashboardPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Welcome to the Dashboard!',
+              'Gösterge Tablosuna Hoş Geldiniz!',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],

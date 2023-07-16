@@ -13,7 +13,6 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3), () {
       // Splash ekranı tamamlandıktan sonra yönlendirme yapılacak sayfaya geçiş yapılabilir.
-      // Örneğin, AnaSayfa'ya yönlendirme yapmak için:
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => LoginOrRegisterPage()),
@@ -29,14 +28,13 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Splash ekranında görünecek logo veya resim
             Image.asset(
               'assets/patheern.png',
               width: 150,
               height: 150,
             ),
             SizedBox(height: 16),
-            // Opsiyonel olarak bir yükleme animasyonu veya metin eklenebilir
+            //yükleme animasyonu veya metin eklenebilir
             CircularProgressIndicator(),
             SizedBox(height: 16),
             Text(

@@ -36,17 +36,17 @@ class LoginOrRegisterPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Lets Get Started',
+              'Hadi Başlayalım',
               style: TextStyle(
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),
             ),
             SizedBox(height: 20),
             Text(
-              'WERE YOU HERE BEFORE?',
+              'BURADA DAHA ÖNCE BULUNDUN MU?',
               style: TextStyle(
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -69,7 +69,7 @@ class LoginOrRegisterPage extends StatelessWidget {
                 );
               },
               child: Text(
-                'Login',
+                'Oturum Aç',
                 style: TextStyle(
                   fontSize: 20,
                 ),
@@ -97,7 +97,7 @@ class LoginOrRegisterPage extends StatelessWidget {
                 );
               },
               child: Text(
-                'Register',
+                'Kayıt Ol',
                 style: TextStyle(
                   fontSize: 20,
                 ),

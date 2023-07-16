@@ -98,161 +98,162 @@ class _LoginPageState extends State<LoginPage> {
         ),
         backgroundColor: Color(0xFFD2D2D2),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: TextFormField(
-                  controller: eMailController,
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    filled: true,
-                  ),
-                ),
-              ),
-              SizedBox(height: 20.0),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: TextFormField(
-                  controller: passwordController,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    filled: true,
-                  ),
-                ),
-              ),
-              SizedBox(height: 20.0),
-              Container(
-                alignment: Alignment.centerLeft,
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: GestureDetector(
-                  onTap: navigateToForgotPassword,
-                  child: Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 42, 61, 109),
-                      fontWeight: FontWeight
-                          .bold, 
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: TextFormField(
+                    controller: eMailController,
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      filled: true,
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20.0),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: ElevatedButton(
-                  onPressed: signUserIn,
-                  style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF0A426F),
-                    minimumSize: Size(sWidth, 50.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0),
-                    ),
-                  ),
-                  child: Text(
-                    'Sign In',
-                    style: TextStyle(
-                      fontSize: 20,
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: TextFormField(
+                    controller: passwordController,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      filled: true,
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 1.0,
-                    width: 140.0,
-                    color: Colors.black,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                SizedBox(height: 20.0),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: GestureDetector(
+                    onTap: navigateToForgotPassword,
                     child: Text(
-                      'or',
+                      'Forgot Password?',
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                        color: Color.fromARGB(255, 42, 61, 109),
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                  Container(
-                    height: 1.0,
-                    width: 140.0,
-                    color: Colors.black,
-                  ),
-                ],
-              ),
-              SizedBox(height: 20.0),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: ElevatedButton(
-                  onPressed: signInWithGoogle,
-                  style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF0A426F),
-                    minimumSize: Size(sWidth, 50.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/google.svg',
-                        width: 24.0,
-                        height: 24.0,
-                      ),
-                      SizedBox(width: 10.0),
-                      Text(
-                        'Sign in with Google',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
-              ),
-              SizedBox(height: 20.0),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: ElevatedButton(
-                  onPressed: signInWithGoogle,
-                  style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF0A426F),
-                    minimumSize: Size(sWidth, 50.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: ElevatedButton(
+                    onPressed: signUserIn,
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFF0A426F),
+                      minimumSize: Size(sWidth, 50.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
+                    ),
+                    child: Text(
+                      'Sign In',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
                     ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/linkedin.svg',
-                        width: 24.0,
-                        height: 24.0,
-                      ),
-                      SizedBox(width: 10.0),
-                      Text(
-                        'Sign in with Linkedin',
+                ),
+                SizedBox(height: 20.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 1.0,
+                      width: 140.0,
+                      color: Colors.black,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text(
+                        'or',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
-                    ],
+                    ),
+                    Container(
+                      height: 1.0,
+                      width: 140.0,
+                      color: Colors.black,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: ElevatedButton(
+                    onPressed: signInWithGoogle,
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFF0A426F),
+                      minimumSize: Size(sWidth, 50.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/google.svg',
+                          width: 24.0,
+                          height: 24.0,
+                        ),
+                        SizedBox(width: 10.0),
+                        Text(
+                          'Sign in with Google',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: ElevatedButton(
+                    onPressed: signInWithGoogle,
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFF0A426F),
+                      minimumSize: Size(sWidth, 50.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/linkedin.svg',
+                          width: 24.0,
+                          height: 24.0,
+                        ),
+                        SizedBox(width: 10.0),
+                        Text(
+                          'Sign in with Linkedin',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

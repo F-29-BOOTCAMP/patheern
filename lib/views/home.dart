@@ -15,6 +15,7 @@ import 'package:patheern/page/menu_page/ayarlar_page.dart';
 import 'package:patheern/page/menu_page/basvuru.dart';
 import 'package:patheern/page/menu_page/bildirim_page.dart';
 import 'package:patheern/page/menu_page/favorites_page.dart';
+import 'package:patheern/page/map_page.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -53,7 +54,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           );
           break;
-        case 3: // Profil öğesi
+        case 3: // Harita öğesi
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  EmptyPage(), // Harita sayfasına yönlendirme
+            ),
+          );
+          break;
+        case 4: // Profil öğesi
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -325,7 +335,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           IconButton(
                             icon: Icon(Icons.bookmark),
                             onPressed: () {
-                              // When the icon is clicked, the code here runs
                             },
                           ),
                         ],
@@ -356,6 +365,10 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Ara',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map),
+            label: 'Haritalar',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

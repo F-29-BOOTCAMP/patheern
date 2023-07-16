@@ -31,8 +31,8 @@ class LoginOrRegisterPage extends StatelessWidget {
           children: <Widget>[
             Image.asset(
               'assets/patheern.png', //logo
-              width: 200, 
-              height: 200, 
+              width: 200,
+              height: 200,
             ),
             SizedBox(height: 20),
             Text(
@@ -55,17 +55,23 @@ class LoginOrRegisterPage extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 primary: Color(0xFFFA5805),
                 minimumSize: Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(15), 
+                ),
               ),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(),
+                  ),
                 );
               },
               child: Text(
                 'Login',
                 style: TextStyle(
-                  fontSize: 20, 
+                  fontSize: 20,
                 ),
               ),
             ),
@@ -74,21 +80,26 @@ class LoginOrRegisterPage extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 primary: Color(0xFFFA5805),
                 minimumSize: Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
               ),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => RegisterPage(onTap: () {
-                            Navigator.pop(
-                                context); // Go back to the previous page
-                          })),
+                    builder: (context) => RegisterPage(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
                 );
               },
               child: Text(
                 'Register',
                 style: TextStyle(
-                  fontSize: 20, 
+                  fontSize: 20,
                 ),
               ),
             ),

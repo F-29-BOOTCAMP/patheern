@@ -17,7 +17,7 @@ Takım Elemanları:
 -Sümeyra Aydemir:Developer
 
 
--Arya Zeynep Kaya: Developer
+-Arya Zeynep Mete: Developer
 
 
 -Berke Ozsap:Developer

@@ -4,35 +4,6 @@ import 'package:flutter/widgets.dart';
 import 'login_page.dart';
 import 'register_page.dart';
 
-/*class LoginOrRegisterPage extends StatefulWidget {
-  const LoginOrRegisterPage({Key? key}) : super(key: key);
-
-  @override
-  State<LoginOrRegisterPage> createState() => _LoginOrRegisterPageState();
-}
-
-class _LoginOrRegisterPageState extends State<LoginOrRegisterPage> {
-  bool showLoginPage = true;
-
-  void togglePage() {
-    setState(() {
-      showLoginPage = !showLoginPage;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (showLoginPage) {
-      return LoginPage(
-        onTap: togglePage,
-      );
-    } else {
-      return RegisterPage(
-        onTap: togglePage,
-      );
-    }
-  }
-}*/
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key? key}) : super(key: key);
 
@@ -43,10 +14,8 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return LoginOrRegisterPage();
   }
-  // State and build method goes here.
 }
 
 class LoginOrRegisterPage extends StatelessWidget {
@@ -55,20 +24,57 @@ class LoginOrRegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFD2D2D2),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset(
+              'assets/patheern.png', //logo
+              width: 200, 
+              height: 200, 
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Lets Get Started',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'WERE YOU HERE BEFORE?',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFFA5805),
+                minimumSize: Size(200, 50),
+              ),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => LoginPage()),
                 );
               },
-              child: Text('Login'),
+              child: Text(
+                'Login',
+                style: TextStyle(
+                  fontSize: 20, 
+                ),
+              ),
             ),
+            SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFFA5805),
+                minimumSize: Size(200, 50),
+              ),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -79,7 +85,12 @@ class LoginOrRegisterPage extends StatelessWidget {
                           })),
                 );
               },
-              child: Text('Register'),
+              child: Text(
+                'Register',
+                style: TextStyle(
+                  fontSize: 20, 
+                ),
+              ),
             ),
           ],
         ),
@@ -87,34 +98,3 @@ class LoginOrRegisterPage extends StatelessWidget {
     );
   }
 }
-
-// sonradan ekle
-/*
-SizedBox(height: 20),
-                    Text(
-                      'Lets Get Started',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Text(
-                      'WERE YOU HERE BEFORE?',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    Container(
-                      width: 148,
-                      height: 21,
-                      child: Text(
-                        'SIGN UP',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                    */

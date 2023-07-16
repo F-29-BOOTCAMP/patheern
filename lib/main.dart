@@ -6,7 +6,7 @@ import 'package:patheern/authentication/auth_page.dart';
 import 'package:patheern/authentication/login_page.dart';
 import 'package:patheern/authentication/register_page.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:patheern/splash_screen.dart';
 
 Future<void> main() async { 
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,11 +26,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Splash(),
+      home: SplashScreen(),
     );
   }
 }
 
+/*
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
 
@@ -105,3 +106,4 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     );
   }
 }
+*/

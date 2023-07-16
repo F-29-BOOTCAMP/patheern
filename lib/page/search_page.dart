@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatefulWidget {
@@ -200,3 +201,4 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 }
+

@@ -379,7 +379,7 @@ class _MyHomePageState extends State<MyHomePage> {
               label: 'Kaydedilenler',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.map),
+              icon: Icon(Icons.explore),
               label: 'Haritalar',
             ),
             BottomNavigationBarItem(

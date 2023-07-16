@@ -7,8 +7,27 @@ class FavoritesPages extends StatefulWidget {
 }
 
 class _FavoritesPagesState extends State<FavoritesPages> {
-  List<String> favorilerListesi = [
-    'Öğe 1',
+  List<Map<String, dynamic>> favorilerListesi = [
+    {
+      'oge': 'Google  |  Yazılım Geliştirme',
+      'logo': 'assets/google.svg',
+    },
+    {
+      'oge': 'Starbucks  |  Muhasebe',
+      'logo': 'assets/starbucks.svg',
+    },
+    {
+      'oge': 'Netflix  |  Tasarım',
+      'logo': 'assets/netflix.svg',
+    },
+    {
+      'oge': 'Tesla  |  Veri Anlizi',
+      'logo': 'assets/tesla.svg',
+    },
+    {
+      'oge': 'Spotify  |  Yazılım Geliştirme',
+      'logo': 'assets/spotify.svg',
+    },
   ];
 
   void favoriOgeSil(int index) {
@@ -17,29 +36,49 @@ class _FavoritesPagesState extends State<FavoritesPages> {
     });
   }
 
-  void favoriOgeEkle(String yeniOge) {
+  void favoriOgeEkle(String yeniOge, String yeniLogo) {
     setState(() {
-      favorilerListesi.add(yeniOge);
+      favorilerListesi.add({
+        'oge': yeniOge,
+        'logo': yeniLogo,
+      });
     });
   }
 
   void showEklemeDialog(BuildContext context) {
     String yeniOge = '';
+    String yeniLogo = '';
 
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Favori Öğe Ekle'),
-          content: TextField(
-            onChanged: (value) {
-              yeniOge = value;
-            },
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                onChanged: (value) {
+                  yeniOge = value;
+                },
+                decoration: InputDecoration(
+                  labelText: 'Öğe',
+                ),
+              ),
+              TextField(
+                onChanged: (value) {
+                  yeniLogo = value;
+                },
+                decoration: InputDecoration(
+                  labelText: 'Logo (asset path)',
+                ),
+              ),
+            ],
           ),
           actions: [
             ElevatedButton(
               onPressed: () {
-                favoriOgeEkle(yeniOge);
+                favoriOgeEkle(yeniOge, yeniLogo);
                 Navigator.of(context).pop();
               },
               child: Text('Ekle'),
@@ -61,7 +100,7 @@ class _FavoritesPagesState extends State<FavoritesPages> {
         itemCount: favorilerListesi.length,
         itemBuilder: (BuildContext context, int index) {
           return Dismissible(
-            key: Key(favorilerListesi[index]),
+            key: Key(favorilerListesi[index]['oge']),
             direction: DismissDirection.horizontal,
             onDismissed: (direction) {
               setState(() {
@@ -102,14 +141,14 @@ class _FavoritesPagesState extends State<FavoritesPages> {
                       ),
                     ),
                     child: SvgPicture.asset(
-                      'assets/google.svg',
-                      width: 32,
-                      height: 32,
+                      favorilerListesi[index]['logo'],
+                      width: 40,
+                      height: 40,
                     ),
                   ),
                   SizedBox(width: 16),
                   Text(
-                    favorilerListesi[index],
+                    favorilerListesi[index]['oge'],
                     style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                   Spacer(),

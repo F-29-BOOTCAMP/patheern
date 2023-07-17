@@ -206,7 +206,10 @@ API,deneyim ve mimari üzerine yoğunlaşılacağına karar verildi.
 URL: https://miro.com/welcomeonboard/NmtEMHk5aWNIc29LSnVjWkxwNm9MU01jb2I0YWk1cmt1Wk5xd0F1RTJza3ZHZFl2cFQ2QWZpYXBSTlpsaE96RnwzNDU4NzY0NTUxMDUzMTY2ODM4fDI=?share_link_id=756487073773 - https://miro.com/app/board/uXjVM9oDfWc=/ https://trello.com/invite/b/QjG35vLH/ATTI03703509e7bcf55b435a46e2c1b4ec8380F513E9/f-29-bootcamphttps://trello.com/b/QjG35vLH/f-29-bootcamp
 
 ------
+Sprint 3
+Sprint Notları: Sprint planlama toplantılarında karar verdiğimiz üzere 3. Sprintte takım içi çalışmanın güçlendirilmesi sağlanmıştır. UI (Figma tamamlanmış olup eksiklikler giderilerek kodların birleştirilmesine odaklanılmıştır. Kodlarda düzenlemeler yapılarak alınan hatalar giderilmiş, kodlar birleştirilerek uygulama testleri başarıyla gerçekleşmiştir. Daiy Scrum için her gün 23.00’da toplanılarak takım arkadaşlarımızla düzenli olarak gerçekleştirilmiştir. UI ve kodlarda düzenlenemeler yapılarak ürün tamamlanmıştır. 3. Sprint içinde tamamlanması tahmin edilen puan:150 puan
 
+Daily Scrum: Daily Scrum bu sprintte her gün Discord üzerinden sesli, görüntülü katılım ve ekran paylaşımı yapılarak sağlanmış, önemli gereksinimler WhatsApp'ta kurduğumuz Daily Scrum grubunda paylaşılmıştır. Gerçekleştirilenn toplantılarda kodlardaki eksiklikler giderilmiş, hataların giderilmesi üzerinde durulmuştur.
 
 [Daily Scrum](https://github.com/F-29-BOOTCAMP/patheern/files/12066723/Daily.Scrum.pdf)
 
@@ -248,4 +251,8 @@ URL: https://miro.com/welcomeonboard/NmtEMHk5aWNIc29LSnVjWkxwNm9MU01jb2I0YWk1cmt
 <img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/72568b99-16bf-49d5-a66c-e4dc21737725" width="400" height="800">
 <img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/5edb5d61-04b4-4f64-8f03-f5f59caf31cf" width="400" height="800">
 </div>
+
+Sprint Review: Bu sprintte kendi aramızda puanlama sistemi geliştirerek katılım oranını artırdık, düzenli şekilde kodlar üzerinde çalışmalar yapıldı. Filter Page, Job Detail, Haritalar, Profile Page, Setting Page yoğunlaşıldı. User Acoount Page, User Home Page, Application Pages, Settings Page kodları ve tasarımları tamamlanıp uygulama çalıştırıldı. Authentication ekranları kodlandı ve Firebase bağlantısı kuruldu. Onboarding tamamlandı. Ekip çalışması güçlendirilerek ürün teslimine odaklanıldı. Kodlar bitirilerek Githuba yüklenildi. Kodlardaki hatalar giderilerek test aşamasına geçildi. Uygulamanın çalışılırlığı ölçüldü. Tasarım ve mimarı yapı güçlendirildi. 
+
+print Retrospective: Puanlama sistemine göre üyelerin aktifliği sağlanmaya çalışılmıştır. API, deneyim ve mimari üzerine yoğunlaşılmıştır. 3. Sprint planlamaları yapıldı. Github çalışması için takım olarak github üzerinde eş zamanlı ve temiz bir şekilde çalışılma deneyimlenmiştir. Clean Code üzerinde çalışılarak belirlenen kurallar uygulanmıştır. Mimari yapı oturtulmuştur. Klasörleme düzeni üzerinde çalışma gerçekleştirilmiştir. Authentication: Kullanıcının ekran arasında UX deneyimi gerçekleştirilmiştir. Assetler üzerinde düzenleme yapılmıştır. UI Tasarımı için seçilen uygulamadaki değişiklik sonucu arayüzler tekrar tasarlanmıştır. UI Tasarımında örtak kararlar alınarak eklemeler ve çıkartmalar yapılarak ürün tamamlanmıştır.
 

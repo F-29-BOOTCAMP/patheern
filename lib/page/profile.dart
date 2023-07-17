@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(MyApp());
@@ -101,7 +102,7 @@ class _ProfilePagesState extends State<ProfilePages> {
                 children: [
                   CircleAvatar(
                     radius: 40,
-                    backgroundImage: AssetImage('assets/patheern.png'),
+                    backgroundImage: AssetImage('assets/patheernlogo.png'),
                   ),
                   SizedBox(width: 16),
                   Column(
@@ -296,7 +297,23 @@ class _ProfilePagesState extends State<ProfilePages> {
                 ),
                 child: Text('Deneyim Ekle'),
               ),
-              SizedBox(height: 1000),
+              SizedBox(height: 14),
+              Text(
+                'Rozetlerim',
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 8.0),
+              Wrap(
+                spacing: 8.0, // rozetler arasındaki yatay boşluk
+                runSpacing: 8.0, // rozetler arasındaki dikey boşluk
+                children: [
+                  Image.asset('assets/rozet2.png', width: 80.0, height: 80.0),
+                  Image.asset('assets/rozet4.png', width: 80.0, height: 80.0),
+                  Image.asset('assets/rozet6.png', width: 80.0, height: 80.0),
+                  Image.asset('assets/rozet7.png', width: 80.0, height: 80.0),
+                ],
+              ),
+              SizedBox(height: 100),
             ],
           ),
         ),

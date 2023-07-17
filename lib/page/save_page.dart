@@ -157,8 +157,8 @@ class _MyHomePageState extends State<SavedPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFFA5805),
-
-        // Boş appbar
+        title: Text('Kaydedilenler'), // AppBar'a başlık ekledik
+        centerTitle: true, // Başlığı ortalamak için
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(32.0),

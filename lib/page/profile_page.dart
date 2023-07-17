@@ -19,12 +19,12 @@ class ProfilePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CircleAvatar(
-                    radius: 70.0,
+                    radius: 60.0,
                     backgroundColor: Colors.blue,
                     child: CircleAvatar(
-                      radius: 66.0,
+                      radius: 50.0,
                       backgroundImage: AssetImage(
-                        'assets/patheern.png', //profil resmi
+                        'assets/patheernlogo.png', //profil resmi
                       ),
                     ),
                   ),
@@ -34,7 +34,8 @@ class ProfilePage extends StatelessWidget {
                     children: [
                       Text(
                         'Vunay Yavaş',
-                        style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 24.0, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 8.0),
                       Text(
@@ -171,6 +172,22 @@ class ProfilePage extends StatelessWidget {
                 contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
                 leading: Icon(Icons.star),
                 title: Text('Metin Yazarlığı Sertifikası'),
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                'Rozetlerim',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 8.0),
+              Wrap(
+                spacing: 8.0, // rozetler arasındaki yatay boşluk
+                runSpacing: 8.0, // rozetler arasındaki dikey boşluk
+                children: [
+                  Image.asset('assets/rozet2.png', width: 80.0, height: 80.0),
+                  Image.asset('assets/rozet4.png', width: 80.0, height: 80.0),
+                  Image.asset('assets/rozet6.png', width: 80.0, height: 80.0),
+                  Image.asset('assets/rozet7.png', width: 80.0, height: 80.0),
+                ],
               ),
               SizedBox(height: 16.0),
               Text(

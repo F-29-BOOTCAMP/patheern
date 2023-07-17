@@ -366,8 +366,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: Theme(
         data: ThemeData(
-          canvasColor: Color(
-              0xFF0A426F), // Alt navigasyon çubuğunun arkaplan rengini 
+          canvasColor: Color.fromARGB(255, 10, 66, 111), // Alt navigasyon çubuğunun arkaplan rengini 
         ),
         child: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
@@ -393,7 +392,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Color(0xFFFA5805),
+          selectedItemColor: Color.fromRGBO(250, 88, 5, 1),
           unselectedItemColor: Color(0xFFF2EEEB),
           selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
           unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: SavedPage(),
     );
   }
 }
@@ -34,12 +34,12 @@ class JobOpportunity {
   });
 }
 
-class MyHomePage extends StatefulWidget {
+class SavedPage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<SavedPage> {
 //iş ilanları için listemiz
 
   List<JobOpportunity> jobOpportunities = [
@@ -139,8 +139,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          // Boş appbar
-          ),
+        backgroundColor: Color(0xFFFA5805),
+
+        // Boş appbar
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(32.0),
         child: Column(
@@ -225,7 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     : Colors.blue,
                               ),
                               child: Icon(
-                                Icons.save,
+                                Icons.bookmark,
                                 color: Colors.white,
                               ),
                             ),

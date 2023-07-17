@@ -24,7 +24,14 @@ class Screen1 extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: kToolbarHeight + 10, // AppBar'ın yükseklik ayarı
         backgroundColor: Color(0xFFFA5805),
-
+        title: Text(
+          'Başvurular',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Colors.white,
+          ),
+        ),
         //sağ kısım -beğen kaydet paylaş-
         actions: [
           IconButton(

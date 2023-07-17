@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:patheern/authentication/login_page.dart';
 import 'package:patheern/models/company.dart';
+import 'package:patheern/page/basvuru2.dart';
 import 'package:patheern/views/constants.dart';
 import 'package:patheern/widgets/company_card.dart';
 import 'package:patheern/widgets/company_card2.dart';

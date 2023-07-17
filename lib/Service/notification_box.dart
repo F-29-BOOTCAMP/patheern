@@ -7,10 +7,10 @@ class NotificationBox_ extends StatefulWidget {
   final String title;
 
   @override
-  _NotificationBox_State createState() => _NotificationBox_State();
+  NotificationBox_State createState() => NotificationBox_State();
 }
 
-class _NotificationBox_State extends State<NotificationBox_> {
+class NotificationBox_State extends State<NotificationBox_> {
   final NotificationService _notificationService = NotificationService();
 
   @override

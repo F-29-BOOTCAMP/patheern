@@ -205,4 +205,47 @@ API,deneyim ve mimari üzerine yoğunlaşılacağına karar verildi.
 
 URL: https://miro.com/welcomeonboard/NmtEMHk5aWNIc29LSnVjWkxwNm9MU01jb2I0YWk1cmt1Wk5xd0F1RTJza3ZHZFl2cFQ2QWZpYXBSTlpsaE96RnwzNDU4NzY0NTUxMDUzMTY2ODM4fDI=?share_link_id=756487073773 - https://miro.com/app/board/uXjVM9oDfWc=/ https://trello.com/invite/b/QjG35vLH/ATTI03703509e7bcf55b435a46e2c1b4ec8380F513E9/f-29-bootcamphttps://trello.com/b/QjG35vLH/f-29-bootcamp
 
+------
+
+
+[Daily Scrum](https://github.com/F-29-BOOTCAMP/patheern/files/12066723/Daily.Scrum.pdf)
+
+[Miro](https://miro.com/app/board/uXjVM9oDfWc=/)
+
+[Drive](https://drive.google.com/drive/folders/13uqxfUZ-nsSX8urOvU9Rin5ZH1Px3SdL)
+
+[Trello](https://trello.com/b/QjG35vLH/f-29-bootcamp)
+
+[Figma](https://www.figma.com/file/KW6T7ynIzYxyjnfJglQBsV/F29?type=design&node-id=0-1&mode=design&t=qVAmOMwblJzc3bDu-0)
+
+
+> Ürün Durumu: Ekran görüntüleri:  
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/09de7988-f737-49f0-a201-63df490336c2" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/3d3c4f38-01b0-4579-a492-8d590719338b" width="400" height="800">
+</div>
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/efc4d547-9d3c-41c4-a13b-4ce71f34fc8e" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/5ce74d1a-5ee1-49b3-99dc-c685afa34fcd" width="400" height="800">
+</div>
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/d0b692e3-6033-4dcf-bfd3-4fb711ed7567" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/47770ba2-b974-485e-baf5-ec9f43980130" width="400" height="800">
+</div>
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/13accfb8-57f7-483b-a29e-9af0e845a507" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/7615fb58-d5f8-4d6a-b44e-9aa85ab8594c" width="400" height="800">
+</div>
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/9ead03c5-4497-43f0-a44a-b7efd94ff626" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/bc83c1b4-68b5-4bbe-b0f2-590ce4e48fc8" width="400" height="800">
+</div>
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/539f91d4-e62f-472f-b82b-d3a62cc41771" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/1fcd8b37-f9d6-4cdf-b61d-ec94b36ba8d5" width="400" height="800">
+</div>
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/72568b99-16bf-49d5-a66c-e4dc21737725" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/5edb5d61-04b4-4f64-8f03-f5f59caf31cf" width="400" height="800">
+</div>
 

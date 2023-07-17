@@ -11,7 +11,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 4), () {
       // Splash ekranı tamamlandıktan sonra yönlendirme yapılacak sayfaya geçiş yapılabilir.
       Navigator.pushReplacement(
         context,

@@ -91,7 +91,7 @@ class Screen1 extends StatelessWidget {
                       // These are the 3 texts
                       SizedBox(height: 10.0),
                       Text(
-                        'Data Center Technician Apprentice',
+                        'Veri Merkezi Teknisyeni Stajyeri',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
@@ -116,7 +116,7 @@ class Screen1 extends StatelessWidget {
                       ),
 
                       Text(
-                        'Eemshaven, Netherlands',
+                        'Eemshaven, Hollanda',
                         style: TextStyle(
                           fontWeight: FontWeight.normal, // Metnin kalınlığı
                           color: Colors.black, // Metnin rengi
@@ -165,7 +165,7 @@ class Screen1 extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Text(
-                          'Posted 10 days ago',
+                          '10 gün önce yüklendi',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
@@ -212,7 +212,7 @@ class Screen1 extends StatelessWidget {
                     );
                   },
                   child: Text(
-                    'Web Page',
+                    'Web Sitesi',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -233,7 +233,7 @@ class Screen1 extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        'About',
+                        'Hakkında',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -243,7 +243,7 @@ class Screen1 extends StatelessWidget {
                       ),
                       SizedBox(width: 16, height: 16),
                       Text(
-                        'Google\'s mission is to organize the world\'s information and make it universally accessible and useful. The company\'s search engine is its most well-known product, providing users with the ability to find information from across the web quickly and efficiently. Google Search utilizes complex algorithms and machine learning techniques to deliver relevant and personalized search results.',
+                        'Google\'ın misyonu, dünyadaki bilgileri düzenlemek ve evrensel olarak erişilebilir ve kullanışlı hale getirmektir. Şirketin arama motoru, kullanıcılara webde hızlı ve verimli bir şekilde bilgi bulma yeteneği sağlayan en iyi bilinen ürünüdür. Google Arama, alakalı ve kişiselleştirilmiş arama sonuçları sunmak için karmaşık algoritmalar ve makine öğrenimi teknikleri kullanır.',
                         textAlign: TextAlign.center, // Metni ortala
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
@@ -309,16 +309,16 @@ class ButtonListWidget extends StatefulWidget {
 
 class _ButtonListWidgetState extends State<ButtonListWidget> {
   List<String> buttons = [
-    'About the Job/ Sponsorship',
-    'Minimum Qualifications',
-    'Responsibilities',
-  ];
+'İş/ Sponsorluk Hakkında ',
+'Gerekli Nitelikler',
+'Sorumluluklar',
+];
 
   List<String> buttonExplainTexts = [
-    'Google, one of the worlds largest technology companies, is seeking Data Center Technician Apprentices to ensure the sustainability of its rapidly expanding data center infrastructure. This apprenticeship program is designed for individuals who are interested in data center operations, passionate about technology, and eager to learn. As a Data Center Technician Apprentice, you will receive training on the functioning, maintenance, and troubleshooting processes of Googles data center infrastructure. Additionally, you will gain knowledge about security protocols and best practices for data center operations. ',
-    'High school diploma or equivalent educational qualification. Basic understanding of computer hardware, networking, and data center concepts. Strong problem-solving skills and attention to detail. Ability to work effectively both independently and in a team. Excellent communication and interpersonal skills. Willingness to work in a physically demanding environment, including lifting heavy equipment. Flexibility to work in shifts and weekends as required.',
-    'Assisting with the installation, configuration, and testing of data center equipment and systems. Performing routine inspections and preventive maintenance tasks to ensure the optimal functioning of the data center. Monitoring and responding to alarms and alerts to identify and resolve issues promptly. Collaborating with the team to troubleshoot and resolve hardware and network-related problems. Adhering to safety protocols and maintaining a clean and organized working environment. Documenting and reporting technical procedures and incidents accurately. Participating in training programs and acquiring relevant certifications to enhance your skills.',
-  ];
+'Google, dünyanın en büyük teknoloji şirketlerinden biri olarak, hızla genişleyen veri merkezi altyapısının sürdürülebilirliğini sağlamak için Veri Merkezi Teknisyen Stajyerleri arıyor. Bu stajyerlik programı, veri merkezi operasyonlarına ilgi duyan, teknolojiye tutkulu ve öğrenmeye istekli bireyler için tasarlanmıştır. Veri Merkezi Teknisyen Stajyeri olarak, Googleın veri merkezi altyapısının işleyişi, bakımı ve sorun giderme süreçleri konusunda eğitim alacaksınız. Ayrıca, veri merkezi operasyonları için güvenlik protokollerini ve en iyi uygulamaları öğreneceksiniz.',
+'Lise diploması veya eşdeğer eğitim niteliği. Bilgisayar donanımı, ağ ve veri merkezi kavramlarını temel düzeyde anlama. Güçlü problem çözme becerileri ve detaya dikkat etme. Hem bağımsız olarak hem de takım halinde etkili bir şekilde çalışabilme. Mükemmel iletişim ve insan ilişkileri becerileri. Ağır ekipmanları kaldırmayı içeren fiziksel olarak zorlayıcı bir ortamda çalışma isteği. Vardiyalarda ve gerektiğinde hafta sonlarında çalışmaya esneklik.',
+'Veri merkezi ekipmanı ve sistemlerinin kurulumu, yapılandırılması ve test edilmesine yardımcı olma. Veri merkezinin optimal işleyişini sağlamak için rutin denetimler ve önleyici bakım görevlerini yerine getirme. Alarm ve uyarıları izleme ve hızlı bir şekilde sorunları tespit edip çözme. Donanım ve ağla ilgili sorunları gidermek için ekip ile işbirliği yapma. Güvenlik protokollerine uyma ve temiz ve düzenli bir çalışma ortamını koruma. Teknik prosedürleri ve olayları doğru bir şekilde belgeleme ve raporlama. Becerilerinizi geliştirmek için eğitim programlarına katılma ve ilgili sertifikaları edinme.',
+];
 
   int selectedIndex = 0;
 
@@ -403,7 +403,7 @@ class _FileUploadPanelState extends State<FileUploadPanel> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Apply',
+            'Başvur',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -411,7 +411,7 @@ class _FileUploadPanelState extends State<FileUploadPanel> {
           ),
           SizedBox(height: 4),
           Text(
-            '<Please Upload Your Files>',
+            '<Lütfen Dosyalarınızı Yükleyin>',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -463,7 +463,7 @@ class _MyPanelState extends State<MyPanel> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Share',
+            'Paylaş',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -522,7 +522,7 @@ class _MyPanelState2 extends State<MyPanel2> {
         children: [
           SizedBox(height: 38),
           Text(
-            'Job/ Sponsorship Link:',
+            'İş/Staj Bağlantı Linki:',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,

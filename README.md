@@ -10,7 +10,7 @@ F-29
 
 - Sümeyra Aydemir:Developer
 
-- Arya Zeynep Kaya: Developer
+- Arya Zeynep Mete: Developer
 
 - Berke Ozsap:Developer
 

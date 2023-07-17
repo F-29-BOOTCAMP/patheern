@@ -209,9 +209,9 @@ API,deneyim ve mimari üzerine yoğunlaşılacağına karar verildi.
 
 # Sprint 3
 
-- Sprint Notları: Sprint planlama toplantılarında karar verdiğimiz üzere 3. Sprintte takım içi çalışmanın güçlendirilmesi sağlanmıştır. UI (Figma tamamlanmış olup eksiklikler giderilerek kodların birleştirilmesine odaklanılmıştır. Kodlarda düzenlemeler yapılarak alınan hatalar giderilmiş, kodlar birleştirilerek uygulama testleri başarıyla gerçekleşmiştir. Daiy Scrum için her gün 23.00’da toplanılarak takım arkadaşlarımızla düzenli olarak gerçekleştirilmiştir. UI ve kodlarda düzenlenemeler yapılarak ürün tamamlanmıştır. 3. Sprint içinde tamamlanması tahmin edilen puan:150 puan
+- Sprint Notları: Sprint planlama toplantılarında karar verdiğimiz üzere 3. Sprintte takım içi çalışmanın güçlendirilmesi sağlanmıştır. UI (Figma) tamamlanmış olup eksiklikler giderilerek kodlar birleştirilmiştir. Kodlarda düzenlemeler yapılarak alınan hatalar giderilmiş, kodlar birleştirilerek uygulama testleri başarıyla gerçekleşmiştir. Daiy Scrum için her gün 23.00’da toplanılarak takım arkadaşlarımızla düzenli olarak gerçekleştirilmiştir. UI ve kodlarda düzenlenemeler yapılarak ürün tamamlanmıştır. 3. Sprint içinde tamamlanması tahmin edilen puan:150 puan
 
-- Daily Scrum: Daily Scrum bu sprintte her gün Discord üzerinden sesli, görüntülü katılım ve ekran paylaşımı yapılarak sağlanmış, önemli gereksinimler WhatsApp'ta kurduğumuz Daily Scrum grubunda paylaşılmıştır. Gerçekleştirilenn toplantılarda kodlardaki eksiklikler giderilmiş, hataların giderilmesi üzerinde durulmuştur.
+- Daily Scrum: her gün Discord üzerinden sesli, görüntülü katılım ve ekran paylaşımı yapılarak sağlanmış, önemli gereksinimler WhatsApp'ta kurduğumuz Daily Scrum grubunda paylaşılmıştır. Gerçekleştirilenn toplantılarda kodlardaki eksiklikler giderilmiş, hataların giderilmesi üzerinde durulmuştur.
 
 [Daily Scrum](https://github.com/F-29-BOOTCAMP/patheern/files/12066723/Daily.Scrum.pdf)
 -[Miro](https://miro.com/app/board/uXjVM9oDfWc=/)
@@ -272,7 +272,12 @@ API,deneyim ve mimari üzerine yoğunlaşılacağına karar verildi.
 
 <br>
 
-- Sprint Review: Bu sprintte kendi aramızda puanlama sistemi geliştirerek katılım oranını artırdık, düzenli şekilde kodlar üzerinde çalışmalar yapıldı. Filter Page, Job Detail, Haritalar, Profile Page, Setting Page yoğunlaşıldı. User Acoount Page, User Home Page, Application Pages, Settings Page kodları ve tasarımları tamamlanıp uygulama çalıştırıldı. Authentication ekranları kodlandı ve Firebase bağlantısı kuruldu. Onboarding tamamlandı. Ekip çalışması güçlendirilerek ürün teslimine odaklanıldı. Kodlar bitirilerek Githuba yüklenildi. Kodlardaki hatalar giderilerek test aşamasına geçildi. Uygulamanın çalışılırlığı ölçüldü. Tasarım ve mimarı yapı güçlendirildi. 
+- Puan tamamlama mantığı: Proje boyunca 400 puanlık bir backlogumuz bulunmaktadır. 2. sprint ve 3. Sprint eşit şekilde dağıtılarak iş yükleri bakımından puanlar hesaplanmıştır.
 
-- Sprint Retrospective: Puanlama sistemine göre üyelerin aktifliği sağlanmaya çalışılmıştır. API, deneyim ve mimari üzerine yoğunlaşılmıştır. 3. Sprint planlamaları yapıldı. Github çalışması için takım olarak github üzerinde eş zamanlı ve temiz bir şekilde çalışılma deneyimlenmiştir. Clean Code üzerinde çalışılarak belirlenen kurallar uygulanmıştır. Mimari yapı oturtulmuştur. Klasörleme düzeni üzerinde çalışma gerçekleştirilmiştir. Authentication: Kullanıcının ekran arasında UX deneyimi gerçekleştirilmiştir. Assetler üzerinde düzenleme yapılmıştır. UI Tasarımı için seçilen uygulamadaki değişiklik sonucu arayüzler tekrar tasarlanmıştır. UI Tasarımında ortak kararlar alınarak eklemeler ve çıkartmalar yapılarak ürün tamamlanmıştır.
+- Backlog Düzeni: Backlog düzenimiz başlangıç sprintinde yapılacak olan işler etrafında düzenlenmiştir. Task Storyleri başına verilen puan görev dağılımlarına kıyasla daha az detaylı tanımlanmıştır. ( özellikle 2.sprint için to do kısımlarında ki ayrıntılar bireysel olarak çalışılmış olup sadece Daily scrumlarda kontrolü sağlanmıştır.)
+
+
+- Sprint Review: Bu sprintte kendi aramızda puanlama sisteminden yola çıkarak katılım oranını artırdık, düzenli şekilde kodlar üzerinde çalışmalar yapıldı. Filter Page, Job Detail, Haritalar, Profile Page, Setting Page yoğunlaşıldı. User Acoount Page, User Home Page, Application Pages, Settings Page kodları ve tasarımları tamamlanıp uygulama çalıştırıldı. Authentication ekranları kodlandı ve Firebase bağlantısı kuruldu. Onboarding tamamlandı. Ekip çalışması güçlendirilerek ürün teslimine odaklanıldı. Kodlar bitirilerek Githuba yüklenildi. Kodlardaki hatalar giderilerek test aşamasına geçildi. Uygulamanın çalışılırlığı ölçüldü. Tasarım ve mimarı yapı güçlendirildi. 
+
+- Sprint Retrospective: Puanlama sistemiden yola çıkılarak üyelerin aktifliği sağlanmaya çalışılmıştır. Eksik kalan sayfa düzenleri üzerinde yoğunlaşıldı. Github çalışması için takım olarak github üzerinde eş zamanlı ve temiz bir şekilde çalışılma deneyimlenmiştir. Clean Code üzerinde çalışılarak belirlenen kurallar uygulanmıştır. Mimari yapı oturtulmuştur. Klasörleme düzeni üzerinde çalışma gerçekleştirilmiştir. Authentication üzerime Kullanıcıların ekranlar arasında ki UX deneyimleri gerçekleştirilmiştir. Assetler üzerinde düzenleme yapılmıştır. Tasarımda ve kodlamada ortak kararlar alınarak eklemeler ve çıkartmalar yapılmış ve ürün tamamlanmıştır.
 

@@ -40,91 +40,110 @@ class SavedPage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<SavedPage> {
-//iş ilanları için listemiz
+//şehir resimleri için listemiz
+  List<String> pngGorselListesi = [
+    'assets/londra.png',
+    'assets/berlin.png',
+    'assets/polonya.png',
+    'assets/ankara.png',
+    'assets/barselona.png',
+    'assets/paris.png',
+    'assets/roma.png',
+    'assets/amsterdam.png',
+    'assets/stockholm.png',
+    'assets/brüksel.png',
+    'assets/lizbon.png',
+    'assets/atina.png',
+    'assets/kopenhag.png',
+    'assets/zürih.png',
+    'assets/polonya.png',
+    'assets/polonya.png',
+  ];
 
+//iş ilanları için listemiz
   List<JobOpportunity> jobOpportunities = [
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Learn Flutter Project',
-      location: 'UK-London',
+      description: 'Flutter ile İklim Değişikliği Çözümü',
+      location: 'İngiltere-Londra',
       date: '30.07.2023',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'ML Project',
-      location: 'Germany-Berlin',
+      description: 'Blockchain ile Modern Bankacılık Eğitimi Fırsatı',
+      location: 'Almanya-Berlin',
       date: '10.08.2023',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Learn Unity Project',
-      location: 'UK-London',
+      description: 'Unity ile Sanat ve Teknoloji Buluşması',
+      location: 'Polonya-Varşova',
       date: '12.09.2023',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Project Managment Project',
-      location: 'Turkey-Ankara',
+      description: 'Proje Yönetimi ile İş Dünyası Deneyimi',
+      location: 'Türkiye-Ankara',
       date: '22.10.2023',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Web Development Project',
-      location: 'Spain-Barcelona',
+      description: 'Web Geliştirme ile Sosyal Değişime Katkı',
+      location: 'İspanya-Barselona',
       date: '30.12.2024',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Data Analysis Project',
-      location: 'France-Paris',
+      description: 'Veri Analizi ile Sürdürülebilirlik Araştırmaları',
+      location: 'Fransa-Paris',
       date: '15.02.2025',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Graphic Design Project',
-      location: 'Italy-Rome',
+      description: 'Grafik Tasarım ile Yaratıcı Endüstrilere Yolculuk',
+      location: 'İtalya-Roma',
       date: '05.04.2025',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Mobile App Development Project',
-      location: 'Netherlands-Amsterdam',
+      description: 'Mobil Uygulama Geliştirme ile İnovasyon Serüveni',
+      location: 'Hollanda-Amsterdam',
       date: '20.06.2025',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Software Testing Project',
-      location: 'Sweden-Stockholm',
+      description: 'Yazılım Test Etme ile Kalite Güvencesi Yolculuğu',
+      location: 'İsveç-Stockholm',
       date: '10.08.2025',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'UI/UX Design Project',
-      location: 'Belgium-Brussels',
+      description: 'UI/UX Tasarım ile Kullanıcı Deneyimi Yaratma',
+      location: 'Belçika-Brüksel',
       date: '25.10.2025',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Digital Marketing Project',
-      location: 'Portugal-Lisbon',
+      description: 'Dijital Pazarlama ile Küresel Pazarlarda Büyüme',
+      location: 'Portekiz-Lizbon',
       date: '12.12.2025',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Cybersecurity Project',
-      location: 'Greece-Athens',
+      description: 'Bilgi Güvenliği ile Siber Güvenlik Yolculuğu',
+      location: 'Yunanistan-Atina',
       date: '05.02.2026',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Artificial Intelligence Project',
-      location: 'Denmark-Copenhagen',
+      description: 'Yapay Zeka ile Geleceği Şekillendirme',
+      location: 'Danimarka-Kopenhag',
       date: '20.04.2026',
     ),
     JobOpportunity(
       title: 'Erasmus',
-      description: 'Blockchain Development Project',
-      location: 'Switzerland-Zurich',
+      description: 'Blockchain Geliştirme ile Dijital Dönüşüm Yolculuğu',
+      location: 'İsviçre-Zürih',
       date: '10.06.2026',
     )
   ];
@@ -162,7 +181,7 @@ class _MyHomePageState extends State<SavedPage> {
                     child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Search opportunities',
+                        hintText: 'İlanları arayın',
                       ),
                     ),
                   ),
@@ -188,7 +207,7 @@ class _MyHomePageState extends State<SavedPage> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
-                                image: AssetImage('assets/polonya.png'),
+                                image: AssetImage(pngGorselListesi[i]),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -208,10 +227,9 @@ class _MyHomePageState extends State<SavedPage> {
                                 SizedBox(height: 8),
                                 Text(jobOpportunities[i].description),
                                 SizedBox(height: 8),
-                                Text(
-                                    'Location: ${jobOpportunities[i].location}'),
+                                Text('Şehir: ${jobOpportunities[i].location}'),
                                 SizedBox(height: 8),
-                                Text('Time: ${jobOpportunities[i].date}'),
+                                Text('Tarih: ${jobOpportunities[i].date}'),
                               ],
                             ),
                           ),

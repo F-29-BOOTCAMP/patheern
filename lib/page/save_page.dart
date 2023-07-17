@@ -56,8 +56,6 @@ class _MyHomePageState extends State<SavedPage> {
     'assets/atina.png',
     'assets/kopenhag.png',
     'assets/zürih.png',
-    'assets/polonya.png',
-    'assets/polonya.png',
   ];
 
 //iş ilanları için listemiz

@@ -1,14 +1,14 @@
+/*
 import 'package:flutter/material.dart';
-import 'package:patheern/authentication/login_or_register_page.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Onboarding Screen',
+      theme: ThemeData(),
       home: OnboardingScreen(),
     );
   }
@@ -20,98 +20,352 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController _pageController = PageController(initialPage: 0);
+  late PageController _pageController;
   int _currentPage = 0;
 
-  List<Widget> _pages = [
-    _createPage(
-      title: '',
-      description: 'İş hayatına kadarki tüm öğrencilik serüveninde yanındayız',
-      image: 'assets/onboarding_1..png',
-    ),
-    _createPage(
-      title: 'Kariyer Yolculuğunda İlerle!',
-      description: 'Hayallerine uzanan yolda staj, eğitim, konferans, geziler ve aradığın her şeyle senin için buradayız',
-      image: 'assets/onboarding_2..png',
-    ),
-    _createPage(
-      title: 'Last but not least',
-      description: 'Everything you need to know about our app',
-      image: 'assets/onboarding_3..png',
-    ),
+  List<Map<String, String>> _pages = [
+    {
+      'image': 'assets/1.png',
+      'title': 'Patheern\'e Hoşgldin',
+      'subtitle': 'İş hayatına kadarki tüm öğrencilik serüveninde yanındayız',
+    },
+    {
+      'image': 'assets/2.png',
+      'title': 'Kariyer Yolculuğunda İlerle!',
+      'subtitle':
+          'Hayallerine uzanan yolda staj, eğitim, konferans, geziler ve aradığın her şeyle senin için buradayız',
+    },
+    {
+      'image': 'assets/3.png',
+      'title': 'Hazırsan Başlayalım!',
+      'subtitle': 'Yüzlerce yeni imkan ile gelişim yolculuğun başlasın',
+    },
   ];
 
-  static Widget _createPage(
-      {String? title, String? description, String? image}) {
-    return Container(
-      margin: EdgeInsets.all(50),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(image ?? '', height: 200, width: 200),
-          SizedBox(height: 30),
-          Text(title ?? '',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
-          SizedBox(height: 20),
-          Text(description ?? '',
-              style: TextStyle(fontSize: 22), textAlign: TextAlign.center),
-        ],
-      ),
-    );
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _currentPage);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  void _onPageChanged(int index) {
+    setState(() {
+      _currentPage = index;
+    });
+  }
+
+  void _goToNextPage() {
+    if (_currentPage < _pages.length - 1) {
+      _pageController.nextPage(
+        duration: Duration(milliseconds: 500),
+        curve: Curves.ease,
+      );
+    } else {
+      // Son sayfadaysa, istediğiniz işlemi gerçekleştirebilir veya bir sonraki sayfaya geçebilirsiniz.
+      print('Onboarding tamamlandı');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        children: _pages,
-        onPageChanged: (int page) {
-          setState(() {
-            _currentPage = page;
-          });
-        },
-      ),
-      bottomSheet: _currentPage == _pages.length - 1
-          ? Container(
-              height: 60,
-              width: double.infinity,
-              color: Colors.blue,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginOrRegisterPage()),
+      backgroundColor: Color.fromARGB(255, 251, 235, 203),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: PageView.builder(
+                controller: _pageController,
+                itemCount: _pages.length,
+                onPageChanged: _onPageChanged,
+                itemBuilder: (context, index) {
+                  return OnboardingPage(
+                    image: _pages[index]['image'] ?? '',
+                    title: _pages[index]['title'] ?? '',
+                    subtitle: _pages[index]['subtitle'] ?? '',
                   );
                 },
-                child: Center(
-                  child: Text(
-                    'Hadi Başlayalım',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
+              ),
+            ),
+            SizedBox(height: 16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                _pages.length,
+                (index) => _buildDot(index),
+              ),
+            ),
+            SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: _goToNextPage,
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFF0A426F),
+                onPrimary: Colors.white,
+                minimumSize: Size(120, 48),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(
+                      26), // İstediğiniz yuvarlatma değerini burada belirleyebilirsiniz
                 ),
               ),
-            )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List<Widget>.generate(_pages.length, (int index) {
-                return AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
-                  height: 10,
-                  width: (index == _currentPage) ? 30 : 10,
-                  margin: EdgeInsets.symmetric(horizontal: 5),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: (index == _currentPage)
-                        ? Colors.blue
-                        : Colors.blue.withOpacity(0.5),
-                  ),
-                );
-              }),
+              child: Text(
+                _currentPage == _pages.length - 1 ? 'Başla' : 'İleri',
+              ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDot(int index) {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 300),
+      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      height: 8.0,
+      width: _currentPage == index ? 24.0 : 8.0,
+      decoration: BoxDecoration(
+        color: _currentPage == index ? Color(0xFFFA5805) : Colors.grey,
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+    );
+  }
+}
+
+class OnboardingPage extends StatelessWidget {
+  final String image;
+  final String title;
+  final String subtitle;
+
+  const OnboardingPage({
+    required this.image,
+    required this.title,
+    required this.subtitle,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset(image),
+        SizedBox(height: 16.0),
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(height: 8.0),
+        Text(
+          subtitle,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color.fromARGB(255, 58, 57, 57),
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ],
+    );
+  }
+}
+*/
+
+
+import 'package:flutter/material.dart';
+import 'package:patheern/authentication/login_or_register_page.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Onboarding Screen',
+      theme: ThemeData(),
+      home: OnboardingScreen(),
+    );
+  }
+}
+
+class OnboardingScreen extends StatefulWidget {
+  @override
+  _OnboardingScreenState createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
+  late PageController _pageController;
+  int _currentPage = 0;
+
+  List<Map<String, String>> _pages = [
+    {
+      'image': 'assets/1.png',
+      'title': 'Patheern\'e Hoşgldin',
+      'subtitle': 'İş hayatına kadarki tüm öğrencilik serüveninde yanındayız',
+    },
+    {
+      'image': 'assets/2.png',
+      'title': 'Kariyer Yolculuğunda İlerle!',
+      'subtitle':
+          'Hayallerine uzanan yolda staj, eğitim, konferans, geziler ve aradığın her şeyle senin için buradayız',
+    },
+    {
+      'image': 'assets/3.png',
+      'title': 'Hazırsan Başlayalım!',
+      'subtitle': 'Yüzlerce yeni imkan ile gelişim yolculuğun başlasın',
+    },
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _currentPage);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  void _onPageChanged(int index) {
+    setState(() {
+      _currentPage = index;
+    });
+  }
+
+  void _goToNextPage() {
+    if (_currentPage < _pages.length - 1) {
+      _pageController.nextPage(
+        duration: Duration(milliseconds: 500),
+        curve: Curves.ease,
+      );
+    } else {
+      // Son sayfadaysa, login veya kayıt sayfasına yönlendirme yapabilirsiniz
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => LoginOrRegisterPage(),
+        ),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 251, 235, 203),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: PageView.builder(
+                controller: _pageController,
+                itemCount: _pages.length,
+                onPageChanged: _onPageChanged,
+                itemBuilder: (context, index) {
+                  return OnboardingPage(
+                    image: _pages[index]['image'] ?? '',
+                    title: _pages[index]['title'] ?? '',
+                    subtitle: _pages[index]['subtitle'] ?? '',
+                  );
+                },
+              ),
+            ),
+            SizedBox(height: 16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                _pages.length,
+                (index) => _buildDot(index),
+              ),
+            ),
+            SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: _goToNextPage,
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFF0A426F),
+                onPrimary: Colors.white,
+                minimumSize: Size(120, 48),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(26),
+                ),
+              ),
+              child: Text(
+                _currentPage == _pages.length - 1 ? 'Başla' : 'İleri',
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDot(int index) {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 300),
+      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      height: 8.0,
+      width: _currentPage == index ? 24.0 : 8.0,
+      decoration: BoxDecoration(
+        color: _currentPage == index ? Color(0xFFFA5805) : Colors.grey,
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+    );
+  }
+}
+
+class OnboardingPage extends StatelessWidget {
+  final String image;
+  final String title;
+  final String subtitle;
+
+  const OnboardingPage({
+    required this.image,
+    required this.title,
+    required this.subtitle,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset(image),
+        SizedBox(height: 16.0),
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(height: 8.0),
+        Text(
+          subtitle,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color.fromARGB(255, 58, 57, 57),
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 }

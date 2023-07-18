@@ -366,7 +366,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: Theme(
         data: ThemeData(
-          canvasColor: Color.fromARGB(255, 10, 66, 111), // Alt navigasyon çubuğunun arkaplan rengini 
+          canvasColor: Color(0xFF0A426F), 
         ),
         child: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[

@@ -219,12 +219,30 @@ API,deneyim ve mimari üzerine yoğunlaşılacağına karar verildi.
 -[Trello](https://trello.com/b/QjG35vLH/f-29-bootcamp)
 -[Figma](https://www.figma.com/file/KW6T7ynIzYxyjnfJglQBsV/F29?type=design&node-id=0-1&mode=design&t=qVAmOMwblJzc3bDu-0)
 
+- Sprint Board Screenshotları:
+
+<br>
+
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/b7ca9e7f-7b4a-4995-86bb-23cc4ffe3c55" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/b87bec97-0254-4141-865e-5b8e0995c15f" width="400" height="800">
+</div>
+
+<br>
+
 - Ürün Durumu: Ekran görüntüleri:
 
 <br>
 
 <div>
 <img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/09de7988-f737-49f0-a201-63df490336c2" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/6de04d80-d991-47b6-a349-1373821fbe79" width="400" height="800">
+</div>
+
+<br>
+
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/182ef20b-5413-4df9-b924-af746c9e9db8" width="400" height="800">
 <img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/3d3c4f38-01b0-4579-a492-8d590719338b" width="400" height="800">
 </div>
 
@@ -272,12 +290,35 @@ API,deneyim ve mimari üzerine yoğunlaşılacağına karar verildi.
 
 <br>
 
+<div>
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/f9420bfe-2afe-44b4-a70a-01083d41b768" width="400" height="800">
+<img src="https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/9a2bdb81-5582-4f89-80c0-2ba522f0721b" width="400" height="800">
+</div>
+
+<br>
+
+- Rozet Tasarımları:
+
+<br>
+
+![rozetler](https://github.com/F-29-BOOTCAMP/patheern/assets/129553815/f927c001-4f40-465d-bde4-50c625694573)
+
+<br>
+
+- Ürün Tanıtımı:
+
+![Patheern Youtube](https://youtu.be/IuMcMjmYnM4)
+
+![Patheern Sunum Youtube]([https://youtu.be/IuMcMjmYnM4](https://youtu.be/-RhVaOZzgrM))
+
+<br>
+
 - Puan tamamlama mantığı: Proje boyunca 400 puanlık bir backlogumuz bulunmaktadır. 2. sprint ve 3. Sprint eşit şekilde dağıtılarak iş yükleri bakımından puanlar hesaplanmıştır.
 
 - Backlog Düzeni: Backlog düzenimiz başlangıç sprintinde yapılacak olan işler etrafında düzenlenmiştir. Task Storyleri başına verilen puan görev dağılımlarına kıyasla daha az detaylı tanımlanmıştır. ( özellikle 2.sprint için to do kısımlarında ki ayrıntılar bireysel olarak çalışılmış olup sadece Daily scrumlarda kontrolü sağlanmıştır.)
 
 
-- Sprint Review: Bu sprintte kendi aramızda puanlama sisteminden yola çıkarak katılım oranını artırdık, düzenli şekilde kodlar üzerinde çalışmalar yapıldı. Filter Page, Job Detail, Haritalar, Profile Page, Setting Page yoğunlaşıldı. User Acoount Page, User Home Page, Application Pages, Settings Page kodları ve tasarımları tamamlanıp uygulama çalıştırıldı. Authentication ekranları kodlandı ve Firebase bağlantısı kuruldu. Onboarding tamamlandı. Ekip çalışması güçlendirilerek ürün teslimine odaklanıldı. Kodlar bitirilerek Githuba yüklenildi. Kodlardaki hatalar giderilerek test aşamasına geçildi. Uygulamanın çalışılırlığı ölçüldü. Tasarım ve mimarı yapı güçlendirildi. 
+- Sprint Review: Bu sprintte kendi aramızda puanlama sisteminden yola çıkarak katılım oranını artırdık, düzenli şekilde kodlar üzerinde çalışmalar yapıldı. Filter Page, Job Detail, Map, Profile Page, Setting Page, Filter Page, Onboarding Screen, Splash Screen, Notification Page,  yoğunlaşıldı. User Acoount Page, User Home Page, Application Pages, Settings Page kodları ve tasarımları tamamlanıp uygulama çalıştırıldı. Authentication ekranları kodlandı ve Firebase bağlantısı kuruldu. Onboarding tamamlandı. Ekip çalışması güçlendirilerek ürün teslimine odaklanıldı. Kodlar bitirilerek Githuba yüklenildi. Kodlardaki hatalar giderilerek test aşamasına geçildi. Uygulamanın çalışılırlığı ölçüldü. Tasarım ve mimarı yapı güçlendirildi. 
 
 - Sprint Retrospective: Puanlama sistemiden yola çıkılarak üyelerin aktifliği sağlanmaya çalışılmıştır. Eksik kalan sayfa düzenleri üzerinde yoğunlaşıldı. Github çalışması için takım olarak github üzerinde eş zamanlı ve temiz bir şekilde çalışılma deneyimlenmiştir. Clean Code üzerinde çalışılarak belirlenen kurallar uygulanmıştır. Mimari yapı oturtulmuştur. Klasörleme düzeni üzerinde çalışma gerçekleştirilmiştir. Authentication üzerime Kullanıcıların ekranlar arasında ki UX deneyimleri gerçekleştirilmiştir. Assetler üzerinde düzenleme yapılmıştır. Tasarımda ve kodlamada ortak kararlar alınarak eklemeler ve çıkartmalar yapılmış ve ürün tamamlanmıştır.
 
